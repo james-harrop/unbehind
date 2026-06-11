@@ -1,0 +1,1456 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unbehind - I build AI tools for solopreneurs. Three tiers from £500.</title>
+
+<meta name="description" content="A 1-to-1 AI builder for solopreneurs. Bring the brief, I design and build the flows, plumb them into your business. £500 one-off, £275/mo retainer, or £1,000/mo embedded.">
+<link rel="canonical" href="https://unbehind.ai">
+
+<meta property="og:title" content="Unbehind - I build AI tools for solopreneurs.">
+<meta property="og:description" content="A 1-to-1 AI builder for solopreneurs. Brief in, working flows out. £500 one-off setup, £275/mo retainer, or £1,000/mo embedded.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://unbehind.ai">
+<meta property="og:image" content="https://unbehind.ai/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Unbehind">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Unbehind - I build AI tools for solopreneurs.">
+<meta name="twitter:description" content="A 1-to-1 AI builder for solopreneurs. Brief in, working flows out. From £500 one-off.">
+<meta name="twitter:image" content="https://unbehind.ai/og.png">
+
+<meta name="theme-color" content="#0A0A0B">
+<meta name="color-scheme" content="dark">
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg:          #0A0A0B;
+    --bg-surface:  #121214;
+    --bg-elevated: #1A1A1D;
+    --ink:         #F5F5F4;
+    --ink-soft:    #A8A8A5;
+    --ink-mute:    #6E6E6B;
+    --border:      rgba(255, 255, 255, 0.08);
+    --border-soft: rgba(255, 255, 255, 0.05);
+    --border-hi:   rgba(255, 255, 255, 0.14);
+
+    --grad-1: #A78BFA;
+    --grad-2: #F0ABA1;
+    --grad-3: #7DD3C0;
+
+    --accent:      #C7B9FF;
+    --accent-mute: #8B7FD1;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: -0.005em;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: -20vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120vw;
+    height: 90vh;
+    background:
+      radial-gradient(ellipse 60% 50% at 30% 30%, rgba(167, 139, 250, 0.18), transparent 70%),
+      radial-gradient(ellipse 50% 40% at 75% 40%, rgba(240, 171, 161, 0.14), transparent 70%),
+      radial-gradient(ellipse 60% 45% at 50% 80%, rgba(125, 211, 192, 0.10), transparent 70%);
+    filter: blur(60px);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  .container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 28px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ============ NAV ============ */
+
+  nav.top {
+    padding: 22px 28px;
+    max-width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+  }
+
+  .wordmark {
+    font-family: 'Geist', sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .wordmark::before {
+    content: '';
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: conic-gradient(from 180deg, var(--grad-1), var(--grad-2), var(--grad-3), var(--grad-1));
+    filter: saturate(0.9) brightness(1.05);
+  }
+
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .nav-link {
+    font-size: 14px;
+    color: var(--ink-soft);
+    transition: color 0.2s;
+  }
+  .nav-link:hover { color: var(--ink); }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-family: 'Geist', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.005em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+  }
+
+  .btn-primary {
+    background: var(--ink);
+    color: var(--bg);
+    border-color: var(--ink);
+  }
+  .btn-primary:hover {
+    background: #fff;
+    transform: translateY(-1px);
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--ink);
+    border-color: var(--border-hi);
+  }
+  .btn-ghost:hover {
+    border-color: var(--ink);
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  /* ============ HERO ============ */
+
+  .hero {
+    padding: 80px 28px 100px;
+    max-width: 1140px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    gap: 48px;
+    align-items: center;
+  }
+
+  .hero-copy { min-width: 0; }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Geist Mono', monospace;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    color: var(--ink-soft);
+    padding: 7px 14px 7px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.02);
+    margin-bottom: 32px;
+  }
+
+  .eyebrow::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--grad-2);
+    box-shadow: 0 0 10px var(--grad-2);
+  }
+
+  .hero h1 {
+    font-family: 'Geist', sans-serif;
+    font-weight: 400;
+    font-size: clamp(36px, 4.6vw, 60px);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    max-width: 18ch;
+    margin-bottom: 24px;
+  }
+
+  .hero h1 .grad {
+    background: linear-gradient(110deg, var(--grad-1) 0%, var(--grad-2) 50%, var(--grad-3) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-style: italic;
+    font-weight: 400;
+    display: inline-block;
+    padding: 0.05em 0.12em 0.05em 0.02em;
+    margin: -0.05em -0.12em -0.05em -0.02em;
+    line-height: 1.12;
+  }
+
+  .hero-sub {
+    font-size: 18px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    max-width: 500px;
+    margin-bottom: 16px;
+    font-weight: 400;
+  }
+
+  .hero-clarifier {
+    font-family: 'Geist Mono', monospace;
+    font-size: 12px;
+    line-height: 1.55;
+    color: var(--ink-mute);
+    max-width: 500px;
+    margin-bottom: 36px;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  /* hero visual - planet */
+  .hero-visual {
+    position: relative;
+    max-width: 440px;
+    aspect-ratio: 1;
+    justify-self: end;
+    width: 100%;
+  }
+
+  .hero-visual::before {
+    content: '';
+    position: absolute;
+    inset: -20%;
+    background:
+      radial-gradient(ellipse 50% 40% at 40% 40%, rgba(167, 139, 250, 0.28), transparent 70%),
+      radial-gradient(ellipse 45% 40% at 70% 60%, rgba(240, 171, 161, 0.22), transparent 70%);
+    filter: blur(50px);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .hero-orb {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 64%;
+    aspect-ratio: 1;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background:
+      radial-gradient(circle at 32% 28%, rgba(255, 255, 255, 0.22), transparent 50%),
+      conic-gradient(from 210deg,
+        var(--grad-1) 0%,
+        var(--grad-2) 35%,
+        var(--grad-3) 65%,
+        var(--grad-1) 100%);
+    box-shadow:
+      0 0 90px rgba(167, 139, 250, 0.35),
+      0 0 50px rgba(240, 171, 161, 0.25),
+      inset 0 -36px 70px rgba(0, 0, 0, 0.42),
+      inset 28px 22px 60px rgba(255, 255, 255, 0.08);
+    z-index: 1;
+    animation: orb-spin 60s linear infinite;
+  }
+
+  .hero-orb-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 96%;
+    aspect-ratio: 1;
+    transform: translate(-50%, -50%) rotate(-18deg);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .hero-orb-ring.inner {
+    width: 78%;
+    transform: translate(-50%, -50%) rotate(22deg);
+    border-color: rgba(255, 255, 255, 0.06);
+  }
+
+  @keyframes orb-spin {
+    from { filter: saturate(0.95) brightness(1.05) hue-rotate(0deg); }
+    to   { filter: saturate(0.95) brightness(1.05) hue-rotate(360deg); }
+  }
+
+  /* ============ CREDENTIALS STRIP ============ */
+
+  .credentials-strip {
+    padding: 28px 28px;
+    max-width: 1140px;
+    margin: 0 auto;
+    border-top: 1px solid var(--border-soft);
+    border-bottom: 1px solid var(--border-soft);
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+  }
+
+  .credentials-label {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex-shrink: 0;
+    max-width: 380px;
+    line-height: 1.4;
+  }
+
+  .strip-eyebrow {
+    font-family: 'Geist Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .strip-eyebrow::before {
+    content: '';
+    width: 14px;
+    height: 1px;
+    background: var(--ink-mute);
+  }
+
+  .strip-headline {
+    font-family: 'Geist', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+
+  .credentials-row {
+    display: flex;
+    gap: 36px;
+    flex-wrap: wrap;
+    font-family: 'Geist', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.01em;
+    color: var(--ink-soft);
+    font-weight: 500;
+  }
+
+  .credentials-row a {
+    color: inherit;
+    transition: color 0.2s;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 2px;
+  }
+  .credentials-row a:hover {
+    color: var(--ink);
+    border-bottom-color: var(--ink);
+  }
+
+  /* ============ SECTION BASE ============ */
+
+  section {
+    padding: 100px 28px;
+    max-width: 1140px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .section-head {
+    max-width: 680px;
+    margin-bottom: 48px;
+  }
+
+  .section-tag {
+    font-family: 'Geist Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.02em;
+    color: var(--ink-mute);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .section-tag::before {
+    content: '';
+    width: 18px;
+    height: 1px;
+    background: var(--ink-mute);
+  }
+
+  h2 {
+    font-family: 'Geist', sans-serif;
+    font-weight: 400;
+    font-size: clamp(28px, 3.6vw, 40px);
+    line-height: 1.12;
+    letter-spacing: -0.025em;
+    color: var(--ink);
+    max-width: 22ch;
+  }
+
+  h2 .grad {
+    background: linear-gradient(110deg, var(--grad-1), var(--grad-2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-style: italic;
+    display: inline-block;
+    padding: 0.05em 0.12em 0.05em 0.02em;
+    margin: -0.05em -0.12em -0.05em -0.02em;
+    line-height: 1.18;
+  }
+
+  .section-lead {
+    margin-top: 16px;
+    font-size: 16px;
+    color: var(--ink-soft);
+    max-width: 560px;
+  }
+
+  /* ============ SOUND FAMILIAR ============ */
+
+  .familiar-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .familiar-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px 24px;
+  }
+
+  .familiar-card p {
+    font-size: 15.5px;
+    line-height: 1.5;
+    color: var(--ink);
+    letter-spacing: -0.005em;
+    text-indent: -1.05em;
+    padding-left: 1.05em;
+  }
+
+  .familiar-card p::before {
+    content: '\2014\00a0';
+    color: var(--grad-2);
+    font-weight: 500;
+  }
+
+  /* ============ SHIP CHIPS ============ */
+
+  .ship-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .ship-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px 24px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    transition: all 0.25s ease;
+  }
+  .ship-card:hover {
+    background: var(--bg-elevated);
+    border-color: var(--border-hi);
+  }
+
+  .ship-icon {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, rgba(167, 139, 250, 0.18), rgba(125, 211, 192, 0.12));
+    border: 1px solid rgba(167, 139, 250, 0.22);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Geist Mono', monospace;
+    font-size: 13px;
+    color: var(--accent);
+  }
+
+  .ship-card .body {
+    min-width: 0;
+  }
+
+  .ship-card h4 {
+    font-family: 'Geist', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+
+  .ship-card p {
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+  }
+
+  /* ============ SERVICES ============ */
+
+  .services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 20px;
+  }
+
+  .service {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    transition: all 0.25s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service:hover {
+    border-color: var(--border-hi);
+    transform: translateY(-2px);
+  }
+
+  .service.featured {
+    background: linear-gradient(165deg, rgba(167, 139, 250, 0.10), rgba(240, 171, 161, 0.04) 60%, transparent);
+    border-color: rgba(167, 139, 250, 0.22);
+  }
+
+  .service-tag {
+    font-family: 'Geist Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    color: var(--ink-mute);
+    text-transform: uppercase;
+  }
+
+  .service h3 {
+    font-family: 'Geist', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+
+  .service-price {
+    font-family: 'Geist', sans-serif;
+    font-size: 36px;
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    line-height: 1;
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+  }
+
+  .service-price .unit {
+    font-size: 13px;
+    color: var(--ink-mute);
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+
+  .service p {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+  }
+
+  .service-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 6px;
+    border-top: 1px solid var(--border);
+    flex-grow: 1;
+  }
+
+  .service-list li {
+    font-size: 13.5px;
+    line-height: 1.45;
+    color: var(--ink);
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .service-list li::before {
+    content: '';
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: rgba(125, 211, 192, 0.16);
+    flex-shrink: 0;
+    margin-top: 3px;
+    position: relative;
+    background-image: radial-gradient(circle, var(--grad-3) 2px, transparent 3px);
+  }
+
+  .service-cta {
+    margin-top: 4px;
+    font-family: 'Geist', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--border);
+    transition: all 0.2s ease;
+    align-self: flex-start;
+  }
+  .service-cta:hover {
+    background: var(--ink);
+    color: var(--bg);
+    border-color: var(--ink);
+  }
+
+  /* ============ GUARANTEE ============ */
+
+  .guarantee {
+    margin-top: 48px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 28px 32px;
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .guarantee::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--grad-1), var(--grad-2), var(--grad-3));
+  }
+
+  .guarantee-seal {
+    flex-shrink: 0;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, rgba(125, 211, 192, 0.35), rgba(167, 139, 250, 0.18));
+    border: 1px solid rgba(125, 211, 192, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ink);
+    font-family: 'Geist Mono', monospace;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .guarantee p {
+    font-size: 16px;
+    line-height: 1.45;
+    color: var(--ink);
+  }
+  .guarantee p strong {
+    font-weight: 500;
+  }
+  .guarantee p span.light {
+    color: var(--ink-soft);
+    display: block;
+    font-size: 14px;
+    margin-top: 2px;
+  }
+
+  /* ============ SPRINT TIMELINE ============ */
+
+  .timeline {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    top: 12px;
+    bottom: 12px;
+    left: 16px;
+    width: 1px;
+    background: linear-gradient(180deg, var(--grad-1), var(--grad-2), var(--grad-3));
+    opacity: 0.35;
+  }
+
+  .timeline-item {
+    padding: 18px 0 18px 52px;
+    position: relative;
+    border-top: 1px solid var(--border-soft);
+  }
+  .timeline-item:first-child { border-top: none; padding-top: 0; }
+
+  .timeline-marker {
+    position: absolute;
+    left: 8px;
+    top: 24px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 2px solid var(--accent);
+    box-shadow: 0 0 0 4px var(--bg);
+  }
+  .timeline-item:first-child .timeline-marker { top: 6px; }
+
+  .timeline-item .day {
+    font-family: 'Geist Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .timeline-item h4 {
+    font-family: 'Geist', sans-serif;
+    font-weight: 500;
+    font-size: 17px;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+
+  .timeline-item p {
+    font-size: 14.5px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    max-width: 640px;
+  }
+
+  .timeline-item p .light {
+    color: var(--ink-mute);
+    font-size: 13.5px;
+    display: block;
+    margin-top: 4px;
+  }
+
+  /* ============ FOUNDER ============ */
+
+  .founder {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 40px;
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 36px;
+    align-items: flex-start;
+    max-width: 920px;
+    margin: 0 auto;
+  }
+
+  .founder-avatar {
+    width: 140px;
+    height: 140px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--grad-1) 0%, var(--grad-2) 60%, var(--grad-3) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Geist', sans-serif;
+    font-size: 62px;
+    font-weight: 300;
+    color: var(--bg);
+    letter-spacing: -0.02em;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .founder-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 999px;
+  }
+
+  .founder-note {
+    min-width: 0;
+  }
+
+  .founder-note .meta {
+    font-family: 'Geist Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-bottom: 10px;
+  }
+
+  .founder-name {
+    font-family: 'Geist', sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 16px;
+  }
+
+  .founder-note p {
+    font-size: 15.5px;
+    line-height: 1.55;
+    color: var(--ink);
+    margin-bottom: 18px;
+  }
+
+  .founder-chips {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+
+  .chip {
+    font-family: 'Geist Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border);
+  }
+
+  .founder-links {
+    font-size: 13px;
+    color: var(--ink-mute);
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .founder-links a {
+    color: var(--ink-soft);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border-bottom: 1px solid var(--border-hi);
+    padding-bottom: 2px;
+    transition: all 0.2s;
+  }
+  .founder-links a:hover {
+    color: var(--ink);
+    border-bottom-color: var(--ink);
+  }
+
+  /* ============ FAQ ============ */
+
+  .faq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px 48px;
+  }
+
+  .faq-item h4 {
+    font-family: 'Geist', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+    margin-bottom: 8px;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .faq-item h4::before {
+    content: '';
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: rgba(167, 139, 250, 0.12);
+    border: 1px solid rgba(167, 139, 250, 0.25);
+    margin-top: 2px;
+    background-image: radial-gradient(circle, var(--grad-1) 3px, transparent 4px);
+  }
+
+  .faq-item p {
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    padding-left: 28px;
+  }
+
+  /* ============ CTA ============ */
+
+  .cta {
+    text-align: center;
+    padding: 120px 28px;
+    max-width: 1140px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .cta-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 64px 40px;
+    max-width: 720px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-card::before {
+    content: '';
+    position: absolute;
+    top: -40%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 200%;
+    background: radial-gradient(ellipse 60% 40% at 50% 30%, rgba(167, 139, 250, 0.12), transparent 70%);
+    pointer-events: none;
+  }
+
+  .cta-card > * { position: relative; z-index: 1; }
+
+  .cta h2 {
+    margin: 0 auto 20px;
+    max-width: 22ch;
+  }
+
+  .cta-note {
+    font-size: 15px;
+    color: var(--ink-soft);
+    margin: 0 auto 32px;
+    max-width: 480px;
+  }
+
+  .cta-row {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+
+  .capacity {
+    font-family: 'Geist Mono', monospace;
+    font-size: 12px;
+    color: var(--ink-mute);
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .capacity::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--grad-3);
+    box-shadow: 0 0 10px var(--grad-3);
+  }
+
+  /* ============ FOOTER ============ */
+
+  footer {
+    padding: 40px 28px;
+    max-width: 1140px;
+    margin: 0 auto;
+    border-top: 1px solid var(--border-soft);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Geist Mono', monospace;
+    font-size: 12px;
+    color: var(--ink-mute);
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  footer a { color: var(--ink-mute); transition: color 0.2s; }
+  footer a:hover { color: var(--ink); }
+
+  /* ============ A11Y ============ */
+
+  .btn:focus-visible,
+  .service-cta:focus-visible {
+    outline: 2px solid var(--grad-1);
+    outline-offset: 3px;
+  }
+  a:focus-visible {
+    outline: 2px solid var(--grad-1);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background: var(--grad-1);
+    color: var(--bg);
+  }
+
+  /* ============ REVEAL ============ */
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ============ RESPONSIVE ============ */
+
+  @media (max-width: 960px) {
+    .hero { grid-template-columns: 1fr; gap: 56px; padding-bottom: 72px; }
+    .hero-visual { max-width: 320px; margin: 0 auto; }
+    .familiar-grid { grid-template-columns: 1fr; }
+    .ship-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 880px) {
+    .faq-grid { grid-template-columns: 1fr; }
+    .founder { grid-template-columns: 1fr; gap: 24px; padding: 32px; text-align: left; }
+    .founder-avatar { width: 96px; height: 96px; font-size: 44px; }
+  }
+
+  @media (max-width: 560px) {
+    body { font-size: 15px; }
+    nav.top, .hero, section, footer, .credentials-strip {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    nav.top { padding-top: 18px; padding-bottom: 18px; }
+    .nav-right { gap: 10px; }
+    .nav-link { display: none; }
+
+    .hero { padding-top: 48px; padding-bottom: 56px; gap: 40px; }
+    .hero h1 { font-size: clamp(32px, 8vw, 44px); }
+    .hero-sub { font-size: 16px; }
+    .hero-visual { max-width: 240px; }
+
+    .credentials-strip { gap: 20px; padding: 20px 20px; justify-content: flex-start; }
+    .credentials-row { gap: 20px; font-size: 13px; }
+    .credentials-label { font-size: 10.5px; }
+
+    section { padding: 72px 20px; }
+    .section-head { margin-bottom: 32px; }
+
+    .cta { padding: 72px 20px; }
+    .cta-card { padding: 44px 24px; }
+
+    .guarantee { flex-direction: column; align-items: flex-start; gap: 16px; padding: 24px; }
+
+    .timeline::before { left: 10px; }
+    .timeline-item { padding-left: 40px; }
+    .timeline-marker { left: 2px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+    .reveal { opacity: 1 !important; transform: none !important; }
+    .hero-orb, .hero-orb-ring { animation: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <a href="/" class="wordmark">Unbehind</a>
+  <div class="nav-right">
+    <a href="#how" class="nav-link">How it works</a>
+    <a href="#offer" class="nav-link">Pricing</a>
+    <a href="#faq" class="nav-link">FAQ</a>
+    <a href="mailto:hello@unbehind.ai?subject=Unbehind%20brief%20call&body=Hi%20James%2C%0A%0AWhat%20I%20do%3A%0A%0AWhat%20I%27d%20want%20to%20build%3A%0A%0AWhich%20tier%20I%27m%20thinking%20about%3A%0A%0A" class="btn btn-primary">Book a brief call</a>
+  </div>
+</nav>
+
+<main>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero-copy">
+      <div class="eyebrow">For solo operators figuring out AI</div>
+
+      <h1>I build AI tools <span class="grad">for solopreneurs.</span></h1>
+
+      <p class="hero-sub">Tell me what you&rsquo;d build if you knew how. I design the flow, build it in Claude Code, and plumb it into your business. Working tools, not a certificate.</p>
+
+      <p class="hero-clarifier">Three tiers &mdash; £500 one-off setup, £500 + £275/mo retainer, or £1,000/mo embedded. No courses, no cohorts, no subscriptions.</p>
+
+      <div class="hero-ctas">
+        <a href="mailto:hello@unbehind.ai?subject=Unbehind%20brief%20call&body=Hi%20James%2C%0A%0AWhat%20I%20do%3A%0A%0AWhat%20I%27d%20want%20to%20build%3A%0A%0AWhich%20tier%20I%27m%20thinking%20about%3A%0A%0A" class="btn btn-primary">Book a brief call &nbsp;→</a>
+        <a href="#offer" class="btn btn-ghost">See pricing</a>
+      </div>
+    </div>
+
+    <div class="hero-visual" aria-hidden="true">
+      <div class="hero-orb-ring"></div>
+      <div class="hero-orb-ring inner"></div>
+      <div class="hero-orb"></div>
+    </div>
+  </section>
+
+  <!-- ===== PROOF STRIP ===== -->
+  <div class="credentials-strip">
+    <div class="credentials-label">
+      <span class="strip-eyebrow">Proof</span>
+      <span class="strip-headline">Built solo. Three live products.</span>
+    </div>
+    <div class="credentials-row">
+      <a href="https://adhouse.ai" target="_blank" rel="noopener">adhouse.ai</a>
+      <a href="https://williamharrop.com" target="_blank" rel="noopener">williamharrop.com</a>
+      <a href="https://jamesharrop.co" target="_blank" rel="noopener">jamesharrop.co</a>
+    </div>
+  </div>
+
+  <!-- ===== WHY NOT A COURSE ===== -->
+  <section class="reveal">
+    <div class="section-head">
+      <div class="section-tag">Why this, not a course?</div>
+      <h2>You don&rsquo;t need a teacher. You need <span class="grad">an AI guy.</span></h2>
+      <p class="section-lead">A course teaches you about AI. I build the AI for your business. You bring the brief; I bring the build. Tools in your business by week two &mdash; not a half-finished course in your inbox by week six.</p>
+    </div>
+  </section>
+
+  <!-- ===== SOUND FAMILIAR ===== -->
+  <section class="reveal">
+    <div class="section-head">
+      <div class="section-tag">Sound familiar?</div>
+      <h2>Three things, <span class="grad">probably.</span></h2>
+    </div>
+
+    <div class="familiar-grid">
+      <div class="familiar-card">
+        <p>You&rsquo;ve bought three AI courses this year. You finished none.</p>
+      </div>
+      <div class="familiar-card">
+        <p>You open ChatGPT to do something specific. Twenty minutes later you&rsquo;ve closed the tab.</p>
+      </div>
+      <div class="familiar-card">
+        <p>You can describe what you want to build. You just can&rsquo;t make it exist.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <section id="how" class="reveal">
+    <div class="section-head">
+      <div class="section-tag">How it works</div>
+      <h2>Brief. Build. <span class="grad">Hand over.</span></h2>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="day">Step 1 &middot; 30 minutes, free</div>
+        <h4>Brief call</h4>
+        <p>Tell me what you&rsquo;d build if you knew how. Where you&rsquo;re stuck. What good looks like.
+          <span class="light">If it&rsquo;s not a fit, I&rsquo;ll say so before we hang up &mdash; no follow-up email, no chase.</span></p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="day">Step 2 &middot; 5-7 days, offline</div>
+        <h4>Design and build</h4>
+        <p>I go away and design the flow &mdash; the prompts, the integrations, the lot. I come back with a working prototype, recorded so you can see what&rsquo;s happening.</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="day">Step 3 &middot; 60-90 minutes</div>
+        <h4>Integration call</h4>
+        <p>We sit on Zoom and plumb it into your business. Test it. Fix what&rsquo;s broken. You leave the call owning a working tool.
+          <span class="light">If you&rsquo;re on Partner or Embedded, this becomes a regular cadence &mdash; new flows, new fixes, every month.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHAT WE COULD BUILD ===== -->
+  <section class="reveal">
+    <div class="section-head">
+      <div class="section-tag">What we could build</div>
+      <h2>Six examples. <span class="grad">Yours might be different.</span></h2>
+      <p class="section-lead">Past briefs from solopreneurs. Yours will be its own thing &mdash; bring it to the brief call and we&rsquo;ll work out the shape.</p>
+    </div>
+
+    <div class="ship-grid">
+      <div class="ship-card">
+        <div class="ship-icon">01</div>
+        <div class="body">
+          <h4>A GPT trained on your voice</h4>
+          <p>So emails, posts and drafts actually sound like you.</p>
+        </div>
+      </div>
+      <div class="ship-card">
+        <div class="ship-icon">02</div>
+        <div class="body">
+          <h4>Inbox triage with drafted replies</h4>
+          <p>Wake up to a clean inbox and three drafts waiting for one-click send.</p>
+        </div>
+      </div>
+      <div class="ship-card">
+        <div class="ship-icon">03</div>
+        <div class="body">
+          <h4>A landing page that doesn&rsquo;t take six weeks</h4>
+          <p>No Webflow course. No designer. Live URL, your domain, in an afternoon.</p>
+        </div>
+      </div>
+      <div class="ship-card">
+        <div class="ship-icon">04</div>
+        <div class="body">
+          <h4>A client report that writes itself</h4>
+          <p>Drop in the data, get a branded PDF your clients actually open.</p>
+        </div>
+      </div>
+      <div class="ship-card">
+        <div class="ship-icon">05</div>
+        <div class="body">
+          <h4>A lead scraper that runs overnight</h4>
+          <p>Wake up to 30 qualified prospects. Repeat daily, forever.</p>
+        </div>
+      </div>
+      <div class="ship-card">
+        <div class="ship-icon">06</div>
+        <div class="body">
+          <h4>One call, five outputs</h4>
+          <p>Record once. Get a follow-up email, social post, blog draft, transcript and to-do list.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRICING ===== -->
+  <section id="offer" class="reveal">
+    <div class="section-head">
+      <div class="section-tag">Pricing</div>
+      <h2>Three tiers. Pick the <span class="grad">shape that fits.</span></h2>
+      <p class="section-lead">Same brief call to start. Same build process. The tiers differ only in how long we keep going.</p>
+    </div>
+
+    <div class="services">
+
+      <!-- TIER 1 -->
+      <div class="service">
+        <div class="service-tag">Setup</div>
+        <h3>&pound;500<span style="font-size:18px;color:var(--ink-soft);font-weight:400"> one-off</span></h3>
+        <div class="service-price" style="font-size:14px;font-weight:500;color:var(--ink);margin-bottom:18px">When you need one flow, built properly</div>
+        <ul class="service-list">
+          <li>30-min brief call</li>
+          <li>I design and build the flow offline (5-7 days)</li>
+          <li>60-90 min integration call &mdash; we plumb it in</li>
+          <li>One AI flow, yours to keep forever</li>
+          <li>Loom recordings of everything</li>
+        </ul>
+        <a href="mailto:hello@unbehind.ai?subject=Unbehind%20Setup%20enquiry&body=Hi%20James%2C%0A%0AWhat%20I%20do%3A%0A%0AWhat%20I%27d%20want%20to%20build%3A%0A%0A" class="service-cta">Book a brief call &rarr;</a>
+      </div>
+
+      <!-- TIER 2 - FEATURED -->
+      <div class="service featured">
+        <div class="service-tag">Partner &middot; Most popular</div>
+        <h3>&pound;500 + &pound;275<span style="font-size:18px;color:var(--ink-soft);font-weight:400">/mo</span></h3>
+        <div class="service-price" style="font-size:14px;font-weight:500;color:var(--ink);margin-bottom:18px">When you want me on your team</div>
+        <ul class="service-list">
+          <li>Everything in Setup</li>
+          <li>One new flow each month, end to end</li>
+          <li>Private Slack &mdash; replies within 24 hours</li>
+          <li>Monthly 30-min check-in call</li>
+          <li>Cancel any month, no notice</li>
+        </ul>
+        <a href="mailto:hello@unbehind.ai?subject=Unbehind%20Partner%20enquiry&body=Hi%20James%2C%0A%0AWhat%20I%20do%3A%0A%0AWhat%20I%27d%20want%20to%20build%20first%3A%0A%0A" class="service-cta">Book a brief call &rarr;</a>
+      </div>
+
+      <!-- TIER 3 -->
+      <div class="service">
+        <div class="service-tag">Embedded</div>
+        <h3>&pound;1,000<span style="font-size:18px;color:var(--ink-soft);font-weight:400">/mo</span></h3>
+        <div class="service-price" style="font-size:14px;font-weight:500;color:var(--ink);margin-bottom:18px">When you just want to hire someone</div>
+        <ul class="service-list">
+          <li>No setup fee &mdash; we just get going</li>
+          <li>I run your AI ops. Unlimited flows, full scope.</li>
+          <li>Private Slack &mdash; same-day replies</li>
+          <li>Weekly 30-min check-in call</li>
+          <li>Cancel any month, no notice</li>
+        </ul>
+        <a href="mailto:hello@unbehind.ai?subject=Unbehind%20Embedded%20enquiry&body=Hi%20James%2C%0A%0AWhat%20I%20do%3A%0A%0AWhat%20I%20need%20someone%20to%20own%3A%0A%0A" class="service-cta">Book a brief call &rarr;</a>
+      </div>
+
+    </div>
+
+    <div class="guarantee">
+      <div class="guarantee-seal">&check;</div>
+      <p><strong>Brief call is always free.</strong><span class="light">If it&rsquo;s not a fit, I&rsquo;ll say so before we hang up. Six clients on retainer at a time.</span></p>
+    </div>
+  </section>
+
+  <!-- ===== FOUNDER ===== -->
+  <section class="reveal">
+    <div class="section-head">
+      <div class="section-tag">Who&rsquo;s behind it</div>
+      <h2>One <span class="grad">person</span>, actually.</h2>
+    </div>
+
+    <div class="founder">
+      <div class="founder-avatar">J</div>
+      <div class="founder-note">
+        <div class="meta">Founder &middot; the only one</div>
+        <div class="founder-name">James Harrop</div>
+        <p>Saatchi-trained, two-time founder. <strong>Eddie Harrop</strong> (stocked in Net-A-Porter and Vogue). <strong>Minderful</strong> (Apple App of the Day, &pound;1m raised, NHS-approved). Twelve months ago I couldn&rsquo;t write a for-loop. I shipped seven products this year on Claude Code. <strong>I&rsquo;m not exceptional. I&rsquo;m just twelve months early.</strong></p>
+        <div class="founder-chips">
+          <span class="chip">Saatchi &amp; Saatchi</span>
+          <span class="chip">Apple App of the Day</span>
+          <span class="chip">&pound;1m raised</span>
+        </div>
+        <div class="founder-links">
+          <a href="https://jamesharrop.co" target="_blank" rel="noopener">jamesharrop.co &nearr;</a>
+          <a href="mailto:hello@unbehind.ai">hello@unbehind.ai</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section id="faq" class="reveal">
+    <div class="section-head">
+      <div class="section-tag">What you&rsquo;re probably thinking</div>
+      <h2>The <span class="grad">honest</span> answers.</h2>
+    </div>
+
+    <div class="faq-grid">
+      <div class="faq-item">
+        <h4>Why these prices?</h4>
+        <p>Solopreneur-priced, deliberately. &pound;500 one-off is half a freelancer day. &pound;275/mo is Notion Pro + Linear + Calendly combined. &pound;1,000/mo is one day a week of a London freelancer at consultant rate.</p>
+      </div>
+      <div class="faq-item">
+        <h4>What if I don&rsquo;t know what to build?</h4>
+        <p>Bring the problem on the brief call. I&rsquo;ll suggest flows you didn&rsquo;t know were possible &mdash; inbox triage, lead scrapers, client reports, GPTs trained on your voice. The brief is the conversation; the build is the proof.</p>
+      </div>
+      <div class="faq-item">
+        <h4>What if I&rsquo;m completely non-technical?</h4>
+        <p>Same as me twelve months ago. Claude Code writes the code in plain English; I do the design. You just bring the business knowledge &mdash; what you sell, who you sell to, what slows you down.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Will it actually work in my business?</h4>
+        <p>Probably. Brief call is free &mdash; if it&rsquo;s not a fit, I&rsquo;ll say so before we hang up. I&rsquo;ve built for consultants, coaches, agencies, creators and service businesses. Mostly the bottleneck is repetitive work; AI does that well.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section id="book" class="cta reveal">
+    <div class="cta-card">
+      <h2>Bring the brief.<br/><span class="grad">I&rsquo;ll build it.</span></h2>
+      <p class="cta-note">30-min brief call, free. From &pound;500 to build it. No courses, no cohorts, no subscriptions.</p>
+      <div class="cta-row">
+        <a href="mailto:hello@unbehind.ai?subject=Unbehind%20brief%20call&body=Hi%20James%2C%0A%0AWhat%20I%20do%3A%0A%0AWhat%20I%27d%20want%20to%20build%3A%0A%0AWhich%20tier%20I%27m%20thinking%20about%3A%0A%0A" class="btn btn-primary">Book a brief call &nbsp;→</a>
+      </div>
+      <div class="capacity">Six clients on retainer at a time.</div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div>© 2026 Unbehind · London</div>
+  <div><a href="mailto:hello@unbehind.ai">hello@unbehind.ai</a></div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
