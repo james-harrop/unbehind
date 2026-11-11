@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Unbehind - I'll sort out the AI you already pay for. From £195.</title>
+<title>Unbehind - You've got AI. You've still got the admin. From £195.</title>
 
-<meta name="description" content="You're using AI like a glorified Google. I set up the AI you already pay for so it knows your work, drafts in your voice, and never sends a thing without your say-so. Audit first. From £195.">
+<meta name="description" content="UK owners spend about 11 hours a week on admin, and fewer than half of those using AI point it at any of that. I set up the AI you already pay for to take on the dull stuff, with nothing sent without your say-so. From £195.">
 <link rel="canonical" href="https://unbehind.ai">
 
-<meta property="og:title" content="You're using AI like a glorified Google.">
-<meta property="og:description" content="I'll sort out the AI you already pay for: it knows your work, drafts in your voice, and never sends a thing without your say-so. From £195.">
+<meta property="og:title" content="You've got AI. You've still got the admin.">
+<meta property="og:description" content="I set up the AI you already pay for to take on the dull stuff: in your voice, on your accounts, nothing sent without your say-so. From £195.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://unbehind.ai">
 <meta property="og:image" content="https://unbehind.ai/og.png">
@@ -18,8 +18,8 @@
 <meta property="og:site_name" content="Unbehind">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="You're using AI like a glorified Google.">
-<meta name="twitter:description" content="I'll sort out the AI you already pay for. In your voice, nothing sent without your say-so. From £195.">
+<meta name="twitter:title" content="You've got AI. You've still got the admin.">
+<meta name="twitter:description" content="I set up the AI you already pay for to take on the dull stuff. In your voice, nothing sent without your say-so. From £195.">
 <meta name="twitter:image" content="https://unbehind.ai/og.png">
 
 <meta name="theme-color" content="#1C3FD7">
@@ -155,15 +155,21 @@
   .wordmark {
     display: inline-flex;
     align-items: center;
-    gap: 9px;
     font-family: var(--display);
     font-weight: 800;
-    font-size: 24px;
+    font-size: 26px;
     letter-spacing: -0.035em;
     text-decoration: none;
     color: inherit;
   }
-  .wordmark svg { width: 26px; height: 26px; flex: none; }
+  .wordmark .un {
+    background: var(--yellow);
+    color: var(--ink);
+    padding: 0.02em 0.14em 0.06em 0.16em;
+    margin-right: 0.04em;
+    border-radius: 4px;
+    transform: rotate(-2deg);
+  }
 
   .nav-links { display: flex; align-items: center; gap: 28px; }
   .nav-links a:not(.btn) {
@@ -180,7 +186,7 @@
     display: grid;
     grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
     gap: 64px;
-    align-items: center;
+    align-items: start;
     padding-top: 56px;
     padding-bottom: 96px;
   }
@@ -307,6 +313,18 @@
   .draft.is-held .draft-state.held { display: inline-flex; color: var(--ink-soft); font-weight: 600; }
   .draft.is-held h3, .draft.is-held p { opacity: 0.55; }
 
+  .demo-intro { color: #fff; margin-bottom: 20px; max-width: 30em; }
+  .demo-intro p { font-size: 18px; line-height: 1.45; color: rgba(255, 255, 255, 0.94); }
+  .demo-intro .demo-title {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: 26px;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    color: var(--yellow);
+    margin-bottom: 8px;
+  }
+
   .brief-caption {
     margin-top: 22px;
     font-size: 17px;
@@ -346,6 +364,13 @@
     color: var(--blue);
   }
   .turn + p { margin-top: 18px; }
+
+  .pains { list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 64px; }
+  .pains li { padding: 26px 0 24px; border-top: 2px solid var(--ink); }
+  .pains h3 { font-size: clamp(24px, 2.6vw, 30px); margin-bottom: 10px; line-height: 1.05; }
+  .pains p { max-width: 30em; }
+  .src { margin-top: 10px; font-family: var(--display); font-weight: 500; font-size: 14px; color: var(--ink-soft); }
+  .src-inline { font-family: var(--display); font-weight: 500; font-size: 15px; color: var(--ink-soft); white-space: nowrap; }
 
   /* two-column prose sections */
 
@@ -552,6 +577,8 @@
     .brief { transform: none; max-width: 520px; }
     .brief-caption { text-align: left; }
     .split { grid-template-columns: 1fr; gap: 28px; }
+    .pains { grid-template-columns: 1fr; }
+    .src-inline { white-space: normal; }
     .team li { grid-template-columns: 1fr; gap: 8px; padding: 22px 0; }
     .control-grid, .control-grid.three { grid-template-columns: 1fr; gap: 30px; }
     .steps { grid-template-columns: 1fr; gap: 36px; }
@@ -609,8 +636,7 @@
 <div class="top on-blue">
   <nav class="nav wrap" aria-label="Main">
     <a href="/" class="wordmark">
-      <svg viewBox="0 0 26 26" aria-hidden="true"><rect width="26" height="26" rx="6" fill="#FFE74A"/><path d="M6.5 13.6l4.3 4.4 8.7-10" fill="none" stroke="#0C1436" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Unbehind
+      <span class="un">Un</span>behind
     </a>
     <div class="nav-links">
       <a href="#how">How it works</a>
@@ -622,8 +648,8 @@
 
   <header class="hero wrap">
     <div>
-      <h1>You&rsquo;re using AI like a glorified Google.</h1>
-      <p class="lead">You already pay for it: ChatGPT, Copilot, Gemini, Claude. I set up what you&rsquo;ve got so it knows your work, drafts in your voice, and never sends a thing without your say-so.</p>
+      <h1>You&rsquo;ve got AI. You&rsquo;ve still got the admin.</h1>
+      <p class="lead">UK owners spend about 11 hours a week on admin, and fewer than half of those using AI point it at any of that. I set up the AI you already pay for to take on the dull stuff: in your voice, and never sending a thing without your say-so.</p>
       <div class="hero-actions">
         <a href="https://calendly.com/james-harrop/30min" target="_blank" rel="noopener" class="btn btn-yellow" id="hero-cta">Book a free call</a>
         <a href="#pricing" class="text-link">See the prices</a>
@@ -632,10 +658,14 @@
     </div>
 
     <div class="brief-holder">
-      <section class="brief" aria-label="An example morning brief you can try">
+      <div class="demo-intro">
+        <p class="demo-title">Here&rsquo;s the idea. Try it.</p>
+        <p>It&rsquo;s Tuesday, 7.30am. Overnight, your AI has drafted three bits of admin. Nothing has gone anywhere. Each one waits for you.</p>
+      </div>
+      <section class="brief" aria-label="An example you can try: three drafts waiting for approval">
         <div class="brief-head">
-          <h2>Your morning brief</h2>
-          <time>Tuesday, 7.30am</time>
+          <h2>Waiting for your OK</h2>
+          <time>Example</time>
         </div>
         <p class="brief-status" id="brief-status" aria-live="polite">Three drafts are waiting for you. Nothing has been sent.</p>
 
@@ -672,7 +702,6 @@
           </div>
         </div>
       </section>
-      <p class="brief-caption">What a good set-up hands you each morning. Go on, press one.</p>
     </div>
   </header>
 </div>
@@ -681,13 +710,31 @@
 
   <section class="band">
     <div class="wrap">
-      <h2>Sound familiar?</h2>
-      <ul class="familiar">
-        <li>You pay for AI every month and use it like a search box.</li>
-        <li>You explain who you are and what you do. Again.</li>
-        <li>It can read your inbox now. Which is exactly why you haven&rsquo;t switched it on.</li>
+      <h2>What owners say gets in the way.</h2>
+      <ul class="pains">
+        <li>
+          <h3>The admin is still yours</h3>
+          <p>Owners spend about 11 hours a week on admin and finance. Most who use AI use it for content and ideas. Fewer than half use it to save time on admin.</p>
+          <p class="src"><a href="https://retailtimes.co.uk/amex-sme-barometer-small-business-owners-spend-nearly-twice-the-time-on-admin-than-growing-their-business/" target="_blank" rel="noopener">Amex SME Barometer 2026</a>, <a href="https://www.simplybusiness.co.uk/knowledge/business-news/small-business-ai-usage-doubles/" target="_blank" rel="noopener">Simply Business 2026</a></p>
+        </li>
+        <li>
+          <h3>You&rsquo;re not sure it&rsquo;s safe</h3>
+          <p>Security and privacy is the number one reason owners hold back: 44% say so. Nine in ten have a concern of some kind, from wrong answers to who is liable.</p>
+          <p class="src"><a href="https://www.simplybusiness.co.uk/knowledge/business-news/small-business-ai-usage-doubles/" target="_blank" rel="noopener">Simply Business 2026</a>, <a href="https://business-times.co.uk/articles/technology/ai-adoption-could-unlock-42bn-opportunity-for-small-businesses-says-fsb/" target="_blank" rel="noopener">FSB 2026</a></p>
+        </li>
+        <li>
+          <h3>You can&rsquo;t see what else it&rsquo;s for</h3>
+          <p>39% don&rsquo;t see a clear use for AI in their business, and only 19% feel very confident using it day to day.</p>
+          <p class="src"><a href="https://www.simplybusiness.co.uk/knowledge/business-news/small-business-ai-usage-doubles/" target="_blank" rel="noopener">Simply Business 2026</a></p>
+        </li>
+        <li>
+          <h3>You haven&rsquo;t the time to work it out</h3>
+          <p>37% of small firms say lack of time is what stops them. 46% say skills.</p>
+          <p class="src"><a href="https://www.smeweb.com/?p=23334" target="_blank" rel="noopener">Enterprise Nation 2026</a></p>
+        </li>
       </ul>
-      <p class="turn">You probably don&rsquo;t need another tool. You need the ones you&rsquo;ve got set up properly.</p>
+      <p class="turn">None of that is a reason to buy another tool. It&rsquo;s a reason to get the ones you&rsquo;ve got set up properly.</p>
+      <p class="lead">Small firms that do use AI report getting about five hours a week back. <span class="src-inline">(<a href="https://www.enterprisenation.com/press/uk-smes-save-over-half-a-day-a-week-with-ai/" target="_blank" rel="noopener">Opinium survey for OpenAI, 2026</a>)</span></p>
     </div>
   </section>
 
