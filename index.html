@@ -5,619 +5,160 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Unbehind - Get your evenings back.</title>
 
-<meta name="description" content="You didn't start a business to do the admin. I set up the AI you already pay for to draft the dull stuff overnight, and it never sends a thing without your OK.">
+<meta name="description" content="I set up the AI you already pay for to handle your admin: emails, chasers and quotes. Nothing goes out without your OK. £950, live in a week.">
 <link rel="canonical" href="https://unbehind.ai">
 
-<meta property="og:title" content="You didn't start a business to do the admin.">
-<meta property="og:description" content="I set up the AI you already pay for to draft the dull stuff overnight. Nothing sent without your OK.">
+<meta property="og:title" content="Get your evenings back.">
+<meta property="og:description" content="I set up the AI you already pay for to handle your admin. Nothing goes out without your OK.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://unbehind.ai">
 <meta property="og:image" content="https://unbehind.ai/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:site_name" content="Unbehind">
-
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="You didn't start a business to do the admin.">
-<meta name="twitter:description" content="I set up the AI you already pay for to draft the dull stuff overnight. Nothing sent without your OK.">
+<meta name="twitter:title" content="Get your evenings back.">
+<meta name="twitter:description" content="I set up the AI you already pay for to handle your admin. Nothing goes out without your OK.">
 <meta name="twitter:image" content="https://unbehind.ai/og.png">
-
 <meta name="theme-color" content="#0C1436">
 
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-
 <link rel="preload" href="/fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/newsreader.woff2" as="font" type="font/woff2" crossorigin>
 
 <style>
-  @font-face {
-    font-family: 'Bricolage Grotesque';
-    src: url('/fonts/bricolage-grotesque.woff2') format('woff2');
-    font-weight: 200 800;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: 'Newsreader';
-    src: url('/fonts/newsreader.woff2') format('woff2');
-    font-weight: 200 800;
-    font-display: swap;
-  }
+  @font-face { font-family: 'Bricolage Grotesque'; src: url('/fonts/bricolage-grotesque.woff2') format('woff2'); font-weight: 200 800; font-display: swap; }
+  @font-face { font-family: 'Newsreader'; src: url('/fonts/newsreader.woff2') format('woff2'); font-weight: 200 800; font-display: swap; }
 
   :root {
-    --night:  #0C1436;   /* 9.40pm */
-    --blue:   #1C3FD7;   /* biro */
-    --yellow: #FFE74A;   /* highlighter */
-    --paper:  #FFFFFF;
-    --wash:   #F1F3FB;
-    --ink:    #0C1436;
-    --soft:   #4A5272;
-    --line:   #E3E6F2;
-
-    --display: 'Bricolage Grotesque', 'Arial Narrow', Arial, sans-serif;
-    --text:    'Newsreader', Georgia, serif;
+    --night: #0C1436;
+    --yellow: #FFE74A;
+    --white: #FFFFFF;
+    --dim: rgba(255, 255, 255, 0.72);
+    --rule: rgba(255, 255, 255, 0.18);
+    --display: 'Bricolage Grotesque', Arial, sans-serif;
+    --text: 'Newsreader', Georgia, serif;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  html { -webkit-text-size-adjust: 100%; }
   body {
-    background: var(--paper);
-    color: var(--ink);
+    background: var(--night);
+    color: var(--white);
     font-family: var(--text);
-    font-size: 20px;
-    line-height: 1.55;
+    font-size: 21px;
+    line-height: 1.5;
     -webkit-font-smoothing: antialiased;
   }
   a { color: inherit; }
-  ::selection { background: var(--yellow); color: var(--ink); }
+  ::selection { background: var(--yellow); color: var(--night); }
+  :focus-visible { outline: 3px solid var(--yellow); outline-offset: 3px; border-radius: 4px; }
 
-  .wrap { max-width: 1080px; margin: 0 auto; padding-left: 24px; padding-right: 24px; }
+  .page { max-width: 760px; margin: 0 auto; padding: 0 24px; }
 
-  h1, h2, h3 {
+  header { padding: 28px 0; }
+  .wordmark { font-family: var(--display); font-weight: 800; font-size: 24px; letter-spacing: -0.035em; text-decoration: none; }
+  .wordmark .un { display: inline-block; background: var(--yellow); color: var(--night); padding: 0.02em 0.14em 0.06em 0.16em; margin-right: 0.04em; border-radius: 4px; transform: rotate(-2deg); }
+
+  .hero { padding: 12vh 0 14vh; }
+  h1 {
     font-family: var(--display);
     font-weight: 800;
-    letter-spacing: -0.04em;
-    line-height: 0.96;
-    text-wrap: balance;
+    font-size: clamp(56px, 11vw, 112px);
+    letter-spacing: -0.05em;
+    line-height: 0.92;
+    margin-bottom: 32px;
   }
+  .intro { font-size: clamp(22px, 2.6vw, 26px); color: var(--dim); max-width: 27em; margin-bottom: 40px; }
+  .intro strong { color: var(--white); font-weight: 600; }
 
   .btn {
     display: inline-block;
+    background: var(--yellow);
+    color: var(--night);
     font-family: var(--display);
     font-weight: 700;
-    font-size: 18px;
+    font-size: 19px;
     line-height: 1;
     text-decoration: none;
-    padding: 19px 28px;
+    padding: 20px 30px;
     border-radius: 8px;
     transition: transform 0.12s ease;
   }
   .btn:hover { transform: translateY(-2px); }
-  .btn-yellow { background: var(--yellow); color: var(--ink); }
-  .btn-night { background: var(--night); color: #fff; }
+  .small { margin-top: 16px; font-family: var(--display); font-size: 16px; color: var(--dim); }
 
-  :focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; border-radius: 4px; }
-  .night :focus-visible, .promises :focus-visible { outline-color: var(--yellow); }
+  section { padding: 56px 0; border-top: 1px solid var(--rule); }
+  h2 { font-family: var(--display); font-weight: 700; font-size: 17px; color: var(--yellow); margin-bottom: 18px; }
 
-  /* ---------- the evening ---------- */
+  .list { list-style: none; }
+  .list li { font-family: var(--display); font-weight: 700; font-size: clamp(26px, 3.4vw, 34px); letter-spacing: -0.035em; line-height: 1.15; padding: 6px 0; }
+  .after { margin-top: 20px; color: var(--dim); }
 
-  .night { background: var(--night); color: #fff; }
+  .price { font-family: var(--display); font-weight: 800; font-size: clamp(56px, 8vw, 84px); letter-spacing: -0.05em; line-height: 0.9; }
+  .price-note { margin-top: 14px; color: var(--dim); }
+  .price-note strong { color: var(--white); font-weight: 600; }
 
-  .nav { display: flex; justify-content: space-between; align-items: center; padding-top: 22px; padding-bottom: 22px; }
-  .wordmark {
-    font-family: var(--display);
-    font-weight: 800;
-    font-size: 25px;
-    letter-spacing: -0.035em;
-    text-decoration: none;
-  }
-  .wordmark .un {
-    display: inline-block;
-    background: var(--yellow);
-    color: var(--ink);
-    padding: 0.02em 0.14em 0.06em 0.16em;
-    margin-right: 0.04em;
-    border-radius: 4px;
-    transform: rotate(-2deg);
-  }
-  .nav .btn { padding: 12px 18px; font-size: 15px; }
+  .me { max-width: 30em; color: var(--dim); }
+  .me strong { color: var(--white); font-weight: 600; }
 
-  .hero { padding-top: 64px; padding-bottom: 120px; }
+  .end { padding: 72px 0 96px; }
 
-  .clock {
-    font-family: var(--display);
-    font-weight: 800;
-    font-size: clamp(72px, 13vw, 168px);
-    letter-spacing: -0.055em;
-    line-height: 0.85;
-    color: var(--yellow);
-    margin-bottom: 30px;
-    font-variant-numeric: tabular-nums;
-  }
-  .clock small {
-    display: block;
-    font-weight: 600;
-    font-size: clamp(18px, 2vw, 22px);
-    letter-spacing: -0.01em;
-    line-height: 1.2;
-    margin-bottom: 14px;
-    color: rgba(255, 255, 255, 0.7);
-  }
+  footer { padding: 28px 0 40px; border-top: 1px solid var(--rule); font-family: var(--display); font-size: 14px; color: var(--dim); }
 
-  .hero h1 {
-    font-size: clamp(42px, 6.2vw, 80px);
-    max-width: 14ch;
-    margin-bottom: 36px;
-  }
-
-  .scene {
-    font-size: clamp(21px, 2.2vw, 25px);
-    line-height: 1.5;
-    max-width: 30em;
-    color: rgba(255, 255, 255, 0.86);
-  }
-  .scene + .scene { margin-top: 0.8em; }
-  .scene strong { color: #fff; font-weight: 600; }
-
-  /* ---------- the morning ---------- */
-
-  .morning { padding-top: 120px; padding-bottom: 120px; }
-  .morning-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    gap: 72px;
-    align-items: center;
-  }
-  .morning .clock { color: var(--blue); font-size: clamp(72px, 9vw, 120px); }
-  .morning .clock small { color: var(--soft); }
-  .morning h2 { font-size: clamp(38px, 4.6vw, 58px); margin-bottom: 24px; max-width: 12ch; }
-  .morning-copy p { max-width: 24em; }
-  .morning-copy p + p { margin-top: 0.7em; }
-
-  .brief {
-    background: #fff;
-    border-radius: 8px;
-    padding: 22px 24px 6px;
-    border: 1px solid var(--line);
-    box-shadow: 0 24px 60px rgba(12, 20, 54, 0.14);
-  }
-  .brief-status {
-    font-family: var(--display);
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 1.35;
-    background: var(--yellow);
-    padding: 11px 13px;
-    border-radius: 4px;
-  }
-  .draft { padding: 18px 0; border-top: 1px solid var(--line); }
-  .brief-status + .draft { border-top: 0; }
-  .draft h3 { font-size: 18px; letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 4px; }
-  .draft p { font-size: 16.5px; line-height: 1.45; color: var(--soft); margin-bottom: 12px; }
-  .draft-actions { display: flex; align-items: center; gap: 8px; min-height: 42px; }
-  .draft-actions button {
-    font-family: var(--display);
-    font-weight: 700;
-    font-size: 15px;
-    line-height: 1;
-    padding: 12px 17px;
-    border-radius: 6px;
-    border: 2px solid var(--blue);
-    cursor: pointer;
-  }
-  .approve { background: var(--blue); color: #fff; }
-  .hold { background: #fff; color: var(--blue); }
-  .done {
-    display: none;
-    align-items: center;
-    gap: 9px;
-    font-family: var(--display);
-    font-weight: 700;
-    font-size: 16px;
-    color: var(--blue);
-  }
-  .done svg { width: 28px; height: 24px; flex: none; }
-  .done path { fill: none; stroke: var(--blue); stroke-width: 4.5; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 60; stroke-dashoffset: 60; }
-  .draft.is-sent button { display: none; }
-  .draft.is-sent .done.sent { display: inline-flex; }
-  .draft.is-sent .done.sent path { animation: tick 0.35s ease-out forwards; }
-  .draft.is-held .hold { display: none; }
-  .draft.is-held .done.held { display: inline-flex; color: var(--soft); font-weight: 600; }
-  .draft.is-held h3, .draft.is-held p { opacity: 0.5; }
-  @keyframes tick { to { stroke-dashoffset: 0; } }
-
-  .morning-cta { margin-top: 30px; }
-  .try { margin-top: 14px; font-family: var(--display); font-weight: 600; font-size: 16px; color: var(--soft); }
-
-  /* ---------- promises ---------- */
-
-  .promises { background: var(--blue); color: #fff; padding-top: 96px; padding-bottom: 96px; }
-  .promises ul { list-style: none; }
-  .promises li {
-    font-family: var(--display);
-    font-weight: 800;
-    font-size: clamp(32px, 4.4vw, 56px);
-    letter-spacing: -0.04em;
-    line-height: 1.02;
-    padding: 18px 0;
-  }
-  .promises li span {
-    display: block;
-    font-family: var(--text);
-    font-weight: 400;
-    font-size: clamp(18px, 1.8vw, 21px);
-    letter-spacing: 0;
-    line-height: 1.45;
-    margin-top: 8px;
-    color: rgba(255, 255, 255, 0.85);
-  }
-
-  /* ---------- sections ---------- */
-
-  .section { padding-top: 112px; padding-bottom: 112px; }
-  .section h2 { font-size: clamp(38px, 4.8vw, 60px); margin-bottom: 48px; max-width: 16ch; }
-
-  .steps { list-style: none; counter-reset: s; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; }
-  .steps li { counter-increment: s; }
-  .steps li::before {
-    content: counter(s);
-    display: block;
-    font-family: var(--display);
-    font-weight: 800;
-    font-size: 22px;
-    width: 44px;
-    height: 44px;
-    line-height: 44px;
-    text-align: center;
-    border-radius: 50%;
-    background: var(--yellow);
-    margin-bottom: 18px;
-  }
-  .steps h3 { font-size: 27px; margin-bottom: 8px; }
-  .steps p { font-size: 19px; color: var(--soft); max-width: 22em; }
-
-  .price-band { background: var(--wash); }
-  .offer {
-    background: #fff;
-    border-radius: 10px;
-    border: 1px solid var(--line);
-    padding: 44px;
-    display: grid;
-    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-    gap: 48px;
-    align-items: start;
-  }
-  .amount {
-    font-family: var(--display);
-    font-weight: 800;
-    font-size: clamp(72px, 8vw, 108px);
-    letter-spacing: -0.055em;
-    line-height: 0.85;
-  }
-  .amount-note { font-family: var(--display); font-weight: 600; font-size: 18px; margin-top: 12px; }
-  .founding {
-    display: inline-block;
-    margin-top: 22px;
-    background: var(--yellow);
-    font-family: var(--display);
-    font-weight: 700;
-    font-size: 17px;
-    line-height: 1.3;
-    padding: 9px 13px;
-    border-radius: 4px;
-  }
-  .offer ul { list-style: none; }
-  .offer li { padding: 8px 0 8px 28px; position: relative; font-size: 19px; line-height: 1.4; }
-  .offer li::before {
-    content: '';
-    position: absolute;
-    left: 2px;
-    top: 16px;
-    width: 11px;
-    height: 11px;
-    border-radius: 50%;
-    background: var(--blue);
-  }
-  .offer .btn { margin-top: 26px; }
-
-  .others { margin-top: 36px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; }
-  .others p { font-size: 18px; color: var(--soft); line-height: 1.45; }
-  .others strong { display: block; font-family: var(--display); font-weight: 700; font-size: 19px; color: var(--ink); margin-bottom: 4px; letter-spacing: -0.015em; }
-
-  .james { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 64px; align-items: start; }
-  .james h2 { margin-bottom: 0; }
-  .james p { max-width: 28em; }
-  .james p + p { margin-top: 0.8em; }
-
-  .questions { max-width: 760px; }
-  .questions details { border-top: 2px solid var(--ink); }
-  .questions details:last-child { border-bottom: 2px solid var(--ink); }
-  .questions summary {
-    list-style: none;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    padding: 22px 0;
-    font-family: var(--display);
-    font-weight: 700;
-    font-size: clamp(21px, 2.3vw, 26px);
-    letter-spacing: -0.025em;
-    line-height: 1.2;
-  }
-  .questions summary::-webkit-details-marker { display: none; }
-  .questions summary::after { content: '+'; color: var(--blue); font-size: 30px; line-height: 0.8; flex: none; transition: transform 0.15s ease; }
-  .questions details[open] summary::after { transform: rotate(45deg); }
-  .questions details p { padding-bottom: 24px; max-width: 32em; }
-
-  .close { background: var(--yellow); padding-top: 112px; padding-bottom: 112px; }
-  .close h2 { font-size: clamp(46px, 7vw, 92px); max-width: 12ch; margin-bottom: 24px; letter-spacing: -0.05em; line-height: 0.92; }
-  .close p { font-size: clamp(21px, 2.2vw, 24px); max-width: 26em; margin-bottom: 34px; }
-  .close .alt { margin-left: 22px; font-family: var(--display); font-weight: 600; font-size: 17px; text-underline-offset: 4px; text-decoration-thickness: 2px; }
-
-  footer { padding-top: 30px; padding-bottom: 30px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-family: var(--display); font-size: 14px; color: var(--soft); }
-
-  .callbar { display: none; }
-
-  @media (max-width: 900px) {
+  @media (max-width: 560px) {
     body { font-size: 19px; }
-    .hero { padding-top: 36px; padding-bottom: 88px; }
-    .morning { padding-top: 88px; padding-bottom: 88px; }
-    .morning-grid { grid-template-columns: 1fr; gap: 40px; }
-    .steps { grid-template-columns: 1fr; gap: 32px; }
-    .offer { grid-template-columns: 1fr; gap: 28px; padding: 30px 24px; }
-    .others { grid-template-columns: 1fr; gap: 20px; }
-    .james { grid-template-columns: 1fr; gap: 24px; }
-    .section, .close { padding-top: 80px; padding-bottom: 80px; }
-    .section h2 { margin-bottom: 36px; }
-    .promises { padding-top: 72px; padding-bottom: 72px; }
+    .hero { padding: 8vh 0 10vh; }
+    .btn { display: block; text-align: center; }
+    section { padding: 44px 0; }
   }
-
-  @media (max-width: 640px) {
-    .wordmark { font-size: 22px; }
-    .offer .btn, .close .btn, .morning-cta { display: block; text-align: center; }
-    .close .alt { display: inline-block; margin: 18px 0 0; }
-    .callbar {
-      display: flex;
-      position: fixed;
-      left: 0; right: 0; bottom: 0;
-      z-index: 10;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-      padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
-      background: var(--night);
-      color: #fff;
-      font-family: var(--display);
-      font-weight: 600;
-      font-size: 15px;
-      transform: translateY(110%);
-      transition: transform 0.25s ease;
-    }
-    .callbar.is-up { transform: none; }
-    .callbar .btn { padding: 13px 18px; font-size: 15px; white-space: nowrap; }
-    footer { padding-bottom: 96px; }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
-  }
+  @media (prefers-reduced-motion: reduce) { .btn { transition: none; } }
 </style>
 </head>
 <body>
+<div class="page">
 
-<div class="night">
-  <nav class="nav wrap" aria-label="Main">
-    <a href="/" class="wordmark"><span class="un">Un</span>behind</a>
-    <a href="https://calendly.com/james-harrop/30min" target="_blank" rel="noopener" class="btn btn-yellow" id="top-cta">Book a free call</a>
-  </nav>
+  <header><a href="/" class="wordmark"><span class="un">Un</span>behind</a></header>
 
-  <header class="hero wrap">
-    <p class="clock"><small>Tuesday</small>9.40pm</p>
-    <h1>You didn&rsquo;t start a business to do the admin.</h1>
-    <p class="scene">The house is quiet. The laptop&rsquo;s open. And it&rsquo;s not the work you love. It&rsquo;s the invoice that&rsquo;s three weeks late, the quote you promised on Monday, and forty emails that each need &ldquo;a quick reply&rdquo;.</p>
-    <p class="scene">You&rsquo;ve tried ChatGPT. It writes a decent email. <strong>You still had to do everything else.</strong></p>
-  </header>
-</div>
-
-<main>
-
-  <section class="morning wrap">
-    <div class="morning-grid">
-      <div class="morning-copy">
-        <p class="clock"><small>Wednesday</small>7.30am</p>
-        <h2>Now imagine it&rsquo;s already done.</h2>
-        <p>Overnight, the AI you already pay for has drafted the lot, in your voice.</p>
-        <p>Nothing has gone anywhere. It&rsquo;s all waiting for your OK.</p>
-        <a href="https://calendly.com/james-harrop/30min" target="_blank" rel="noopener" class="btn btn-night morning-cta">Show me how</a>
-      </div>
-
-      <div>
-        <section class="brief" aria-label="Example: three drafts waiting for your OK">
-          <p class="brief-status" id="brief-status" aria-live="polite">Three drafts waiting for you. Nothing sent.</p>
-
-          <div class="draft">
-            <h3>Nudge on invoice 0142</h3>
-            <p>&ldquo;Hi Dana, a quick one on invoice 0142. Could you let me know when it&rsquo;s due to be paid?&rdquo;</p>
-            <div class="draft-actions">
-              <button type="button" class="approve">Approve</button>
-              <button type="button" class="hold">Not yet</button>
-              <span class="done sent"><svg viewBox="0 0 30 26" aria-hidden="true"><path d="M3 14.5l7.5 8L27 3"/></svg>Sent, because you said so</span>
-              <span class="done held">Held. It&rsquo;ll wait.</span>
-            </div>
-          </div>
-
-          <div class="draft">
-            <h3>Sam&rsquo;s quote, as promised</h3>
-            <p>&ldquo;Thanks for your patience, Sam. Quote attached. I&rsquo;ve held last month&rsquo;s price until Friday.&rdquo;</p>
-            <div class="draft-actions">
-              <button type="button" class="approve">Approve</button>
-              <button type="button" class="hold">Not yet</button>
-              <span class="done sent"><svg viewBox="0 0 30 26" aria-hidden="true"><path d="M3 14.5l7.5 8L27 3"/></svg>Sent, because you said so</span>
-              <span class="done held">Held. It&rsquo;ll wait.</span>
-            </div>
-          </div>
-
-          <div class="draft">
-            <h3>Twelve quick replies</h3>
-            <p>Drafted and sorted. Three need a decision from you. The rest just need a yes.</p>
-            <div class="draft-actions">
-              <button type="button" class="approve">Approve</button>
-              <button type="button" class="hold">Not yet</button>
-              <span class="done sent"><svg viewBox="0 0 30 26" aria-hidden="true"><path d="M3 14.5l7.5 8L27 3"/></svg>Sent, because you said so</span>
-              <span class="done held">Held. It&rsquo;ll wait.</span>
-            </div>
-          </div>
-        </section>
-        <p class="try">An example. Press one and see.</p>
-      </div>
+  <main>
+    <div class="hero">
+      <h1>Get your evenings back.</h1>
+      <p class="intro">I set up the AI you already pay for to handle your admin, so you don&rsquo;t have to. <strong>Nothing goes out without your OK.</strong></p>
+      <a href="https://calendly.com/james-harrop/30min" target="_blank" rel="noopener" class="btn">Book a free 15-minute call</a>
+      <p class="small">No pitch. I&rsquo;ll show you how mine works.</p>
     </div>
-  </section>
 
-  <section class="promises">
-    <div class="wrap">
-      <ul>
-        <li>It never sends without you.<span>Everything is a draft until you press the button.</span></li>
-        <li>It lives on your accounts.<span>Your logins, your data. If we part ways, you keep the lot.</span></li>
-        <li>It never sees what it shouldn&rsquo;t.<span>We agree what stays out before anything is switched on.</span></li>
+    <section>
+      <h2>What it does</h2>
+      <ul class="list">
+        <li>Drafts your emails, in your voice.</li>
+        <li>Chases late invoices and quiet leads.</li>
+        <li>Turns your notes into quotes.</li>
       </ul>
-    </div>
-  </section>
+      <p class="after">All on your own accounts. You just press send.</p>
+    </section>
 
-  <section class="section wrap" id="how">
-    <h2>One week, start to finish.</h2>
-    <ol class="steps">
-      <li>
-        <h3>A free call</h3>
-        <p>Fifteen minutes. I&rsquo;ll show you my own set-up, and tell you honestly if you don&rsquo;t need me.</p>
-      </li>
-      <li>
-        <h3>I set it up</h3>
-        <p>On the AI you already pay for, wherever possible. Your voice, your rules, inside a week.</p>
-      </li>
-      <li>
-        <h3>You switch off</h3>
-        <p>We hand over on your real inbox. Two weeks later, we tune it.</p>
-      </li>
-    </ol>
-  </section>
+    <section>
+      <h2>What it costs</h2>
+      <p class="price">&pound;950</p>
+      <p class="price-note">Once. Live in a week. <strong>My first five clients pay &pound;750.</strong></p>
+    </section>
 
-  <span id="offer"></span>
-  <section class="section price-band" id="pricing">
-    <div class="wrap">
-      <h2>One price. No surprises.</h2>
-      <div class="offer">
-        <div>
-          <p class="amount">&pound;950</p>
-          <p class="amount-note">once, for the full set-up</p>
-          <p class="founding">My first five clients pay &pound;750.</p>
-        </div>
-        <div>
-          <ul>
-            <li>Set up on the AI you already pay for</li>
-            <li>Drafts your emails, chasers and quotes, in your voice</li>
-            <li>Nothing sent without your OK</li>
-            <li>Live inside a week, tuned after two</li>
-            <li>Free fixes for 30 days</li>
-          </ul>
-          <a href="https://calendly.com/james-harrop/30min" target="_blank" rel="noopener" class="btn btn-night">Book a free call</a>
-        </div>
-      </div>
-      <div class="others">
-        <p><strong>Not sure yet? &pound;195</strong>A 90-minute Sort-out and a written plan. It comes off the price if you go ahead.</p>
-        <p><strong>Keep it running. &pound;150 a month</strong>I keep it working as the tools change. Cancel any time.</p>
-        <p><strong>A team? From &pound;2,400</strong>For owner-run firms of up to about 15 people.</p>
-      </div>
-    </div>
-  </section>
+    <section>
+      <h2>Who I am</h2>
+      <p class="me"><strong>I&rsquo;m James.</strong> I was an art director at Saatchi &amp; Saatchi and Fallon, then ran two businesses of my own. Now I run my own week this way, and I set it up for other owners.</p>
+    </section>
 
-  <section class="section wrap">
-    <div class="james">
-      <h2>Hello, I&rsquo;m James.</h2>
-      <div>
-        <p>I was an art director at Saatchi &amp; Saatchi and Fallon, then ran two businesses of my own. I know the 9.40pm inbox from the inside.</p>
-        <p>These days I run my own week this way. I&rsquo;m not a techie. I&rsquo;m a brand person, which is why yours will sound like you, not a robot.</p>
-      </div>
-    </div>
-  </section>
+    <section class="end">
+      <a href="https://calendly.com/james-harrop/30min" target="_blank" rel="noopener" class="btn">Book a free 15-minute call</a>
+      <p class="small">Or email <a href="mailto:jamesharrop@gmail.com">jamesharrop@gmail.com</a></p>
+    </section>
+  </main>
 
-  <span id="faq"></span>
-  <section class="section wrap" id="questions">
-    <h2>Fair questions.</h2>
-    <div class="questions">
-      <details>
-        <summary>Can&rsquo;t I just do this myself?</summary>
-        <p>You could, with a spare weekend and some patience. Most owners have neither. If I think you&rsquo;d be fine on your own, I&rsquo;ll tell you on the call.</p>
-      </details>
-      <details>
-        <summary>Is it safe?</summary>
-        <p>Nothing is sent without you, it runs on your own accounts, and we agree what it must never see before anything is connected. Client records and anything sensitive stay out.</p>
-      </details>
-      <details>
-        <summary>I&rsquo;m not technical.</summary>
-        <p>Good. Neither are most of the people I help. If you can approve an email, you can run this.</p>
-      </details>
-    </div>
-  </section>
+  <footer>&copy; 2026 Unbehind, London</footer>
 
-  <section class="close" id="book">
-    <div class="wrap">
-      <h2>Give me fifteen minutes.</h2>
-      <p>I&rsquo;ll show you mine working, and you&rsquo;ll know straight away if it&rsquo;s for you.</p>
-      <a href="https://calendly.com/james-harrop/30min" target="_blank" rel="noopener" class="btn btn-night" id="closing-cta">Book a free call</a>
-      <a href="mailto:jamesharrop@gmail.com?subject=Unbehind&body=Hi%20James%2C%0A%0A" class="alt">Or just email me</a>
-    </div>
-  </section>
-
-</main>
-
-<footer class="wrap">
-  <span>&copy; 2026 Unbehind, London</span>
-  <a href="mailto:jamesharrop@gmail.com">jamesharrop@gmail.com</a>
-</footer>
-
-<div class="callbar" id="callbar">
-  <span>Free 15-minute call</span>
-  <a href="https://calendly.com/james-harrop/30min" target="_blank" rel="noopener" class="btn btn-yellow">Book a free call</a>
 </div>
-
 <script defer src="/_vercel/insights/script.js"></script>
-<script>
-  // Example drafts: nothing is "sent" until the visitor approves it.
-  (function () {
-    var drafts = document.querySelectorAll('.draft');
-    var status = document.getElementById('brief-status');
-    var words = ['None', 'One', 'Two', 'Three'];
-    function update() {
-      var sent = document.querySelectorAll('.draft.is-sent').length;
-      var held = document.querySelectorAll('.draft.is-held').length;
-      var waiting = drafts.length - sent - held;
-      if (sent === drafts.length) { status.textContent = 'All done. The rest of the morning is yours.'; return; }
-      var parts = [];
-      if (sent) parts.push(words[sent] + ' sent.');
-      if (held) parts.push(words[held] + ' held.');
-      if (waiting) parts.push(words[waiting] + ' still waiting for you.');
-      status.textContent = parts.join(' ') || 'Three drafts waiting for you. Nothing sent.';
-    }
-    drafts.forEach(function (d) {
-      d.querySelector('.approve').addEventListener('click', function () { d.classList.remove('is-held'); d.classList.add('is-sent'); update(); });
-      d.querySelector('.hold').addEventListener('click', function () { d.classList.add('is-held'); update(); });
-    });
-  })();
-
-  // Phone call bar: shows once the top button has scrolled away, hides at the end.
-  (function () {
-    var bar = document.getElementById('callbar');
-    var top = document.getElementById('top-cta');
-    var end = document.getElementById('closing-cta');
-    if (!bar || !('IntersectionObserver' in window)) return;
-    var a = true, b = false;
-    function sync() { bar.classList.toggle('is-up', !a && !b); }
-    new IntersectionObserver(function (e) { a = e[0].isIntersecting; sync(); }).observe(top);
-    new IntersectionObserver(function (e) { b = e[0].isIntersecting; sync(); }).observe(end);
-  })();
-</script>
-
 </body>
 </html>
