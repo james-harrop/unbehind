@@ -1,7 +1,7 @@
 {
   "name": "unbehind",
   "version": "1.0.0",
-  "description": "Landing page for unbehind.ai - a small studio helping seed-stage founders figure out AI.",
+  "description": "Landing page for unbehind.ai - AI set-up and care for owner-run firms and busy professionals.",
   "private": true,
   "type": "module",
   "scripts": {

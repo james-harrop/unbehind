@@ -3,182 +3,84 @@
 <head>
 <meta charset="UTF-8">
 <title>Unbehind OG</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg: #0A0A0B;
-    --ink: #F5F5F4;
-    --ink-mute: #7A7A77;
-    --grad-1: #A78BFA;
-    --grad-2: #F0ABA1;
-    --grad-3: #7DD3C0;
+  @font-face {
+    font-family: 'Bricolage Grotesque';
+    src: url('fonts/bricolage-grotesque.woff2') format('woff2');
+    font-weight: 200 800;
+  }
+  @font-face {
+    font-family: 'Newsreader';
+    src: url('fonts/newsreader.woff2') format('woff2');
+    font-weight: 200 800;
   }
   html, body { margin: 0; padding: 0; }
   body {
     width: 1200px;
     height: 630px;
-    background: var(--bg);
-    color: var(--ink);
-    font-family: 'Geist', -apple-system, sans-serif;
-    position: relative;
+    background: #1C3FD7;
+    color: #fff;
+    font-family: 'Bricolage Grotesque', Arial, sans-serif;
     overflow: hidden;
-    letter-spacing: -0.005em;
   }
-
-  body::before {
-    content: '';
-    position: absolute;
-    inset: -10%;
-    background:
-      radial-gradient(ellipse 50% 45% at 25% 30%, rgba(167, 139, 250, 0.26), transparent 70%),
-      radial-gradient(ellipse 45% 40% at 75% 45%, rgba(240, 171, 161, 0.20), transparent 70%),
-      radial-gradient(ellipse 55% 40% at 50% 85%, rgba(125, 211, 192, 0.15), transparent 70%);
-    filter: blur(40px);
-  }
-
-  /* rising orb on the horizon */
-  .sun {
-    position: absolute;
-    left: 50%;
-    bottom: -340px;
-    transform: translateX(-50%);
-    width: 560px;
-    height: 560px;
-    border-radius: 50%;
-    background:
-      radial-gradient(circle at 32% 26%, rgba(255, 255, 255, 0.20), transparent 48%),
-      conic-gradient(from 210deg, var(--grad-1) 0%, var(--grad-2) 35%, var(--grad-3) 65%, var(--grad-1) 100%);
-    box-shadow:
-      0 0 140px rgba(167, 139, 250, 0.45),
-      0 0 70px rgba(240, 171, 161, 0.35);
-    filter: saturate(0.95) brightness(1.04);
-    -webkit-mask-image: linear-gradient(180deg, #000 30%, transparent 60%);
-    mask-image: linear-gradient(180deg, #000 30%, transparent 60%);
-  }
-
   .frame {
     position: absolute;
-    inset: 40px;
-    padding: 48px 56px;
+    inset: 0;
+    padding: 56px 68px 60px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
-
-  .top-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .top-left {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    font-family: 'Geist Mono', monospace;
-    font-size: 15px;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: var(--ink);
-    padding: 8px 16px 8px 12px;
-    border-radius: 999px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    background: rgba(255, 255, 255, 0.03);
-  }
-
-  .dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--grad-2);
-    box-shadow: 0 0 12px var(--grad-2);
-  }
-
   .wordmark {
-    font-family: 'Geist', sans-serif;
-    font-weight: 500;
-    font-size: 22px;
-    letter-spacing: -0.015em;
-    color: var(--ink);
     display: flex;
     align-items: center;
-    gap: 10px;
-  }
-  .wordmark::before {
-    content: '';
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    background: conic-gradient(from 180deg, var(--grad-1), var(--grad-2), var(--grad-3), var(--grad-1));
-  }
-
-  .headline {
-    font-family: 'Geist', sans-serif;
-    font-weight: 300;
-    font-size: 82px;
-    line-height: 1.02;
+    gap: 14px;
+    font-weight: 800;
+    font-size: 36px;
     letter-spacing: -0.035em;
-    color: var(--ink);
-    max-width: 16ch;
   }
-  .headline .grad {
-    font-family: 'Instrument Serif', Georgia, serif;
-    font-style: italic;
-    font-weight: 400;
-    background: linear-gradient(110deg, var(--grad-1) 0%, var(--grad-2) 55%, var(--grad-3) 110%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+  .wordmark svg { width: 40px; height: 40px; }
+  .headline {
+    font-weight: 800;
+    font-size: 124px;
+    line-height: 0.92;
+    letter-spacing: -0.048em;
+    max-width: 1040px;
   }
-
-  .bottom-row {
+  .foot {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    gap: 40px;
   }
-
-  .prices {
-    display: flex;
-    gap: 28px;
-    font-family: 'Geist Mono', monospace;
-    font-size: 15px;
-    color: var(--ink-mute);
+  .line {
+    font-family: 'Newsreader', Georgia, serif;
+    font-size: 34px;
+    line-height: 1.25;
+    max-width: 720px;
   }
-  .prices strong { color: var(--ink); font-weight: 500; }
-  .prices span { display: flex; gap: 6px; }
-
-  .url {
-    font-family: 'Geist Mono', monospace;
-    font-size: 15px;
-    letter-spacing: 0.02em;
-    color: var(--ink-mute);
+  .tag {
+    background: #FFE74A;
+    color: #0C1436;
+    font-weight: 700;
+    font-size: 28px;
+    letter-spacing: -0.02em;
+    padding: 14px 20px;
+    border-radius: 8px;
+    white-space: nowrap;
   }
 </style>
 </head>
 <body>
-  <div class="sun"></div>
   <div class="frame">
-    <div class="top-row">
-      <div class="top-left">
-        <div class="dot"></div>
-        <span>A one-man AI studio &middot; London</span>
-      </div>
-      <div class="wordmark">Unbehind</div>
+    <div class="wordmark">
+      <svg viewBox="0 0 26 26"><rect width="26" height="26" rx="6" fill="#FFE74A"/><path d="M6.5 13.6l4.3 4.4 8.7-10" fill="none" stroke="#0C1436" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Unbehind
     </div>
-
-    <div>
-      <div class="headline">You use AI every day. <span class="grad">Your business doesn&rsquo;t.</span></div>
-    </div>
-
-    <div class="bottom-row">
-      <div class="prices">
-        <span><strong>£750</strong> First Workflow</span>
-        <span><strong>£350</strong>/mo Partner</span>
-        <span><strong>£1,500</strong>/mo Embedded</span>
-      </div>
-      <div class="url">unbehind.ai</div>
+    <div class="headline">You&rsquo;re using AI like a glorified Google.</div>
+    <div class="foot">
+      <div class="line">Your AI team, set up properly. In your voice, and nothing sent without your say-so.</div>
+      <div class="tag">From &pound;195</div>
     </div>
   </div>
 </body>

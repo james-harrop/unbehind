@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Unbehind - AI systems for solopreneurs and owner-run teams. From £750.</title>
+<title>Unbehind - Your AI team, set up properly. From £195.</title>
 
-<meta name="description" content="You use AI every day - your business doesn't. The average UK owner loses 11 hours a week to admin; I build the workflows that hand them back - invoice chasing, lead follow-up, proposals, inbox triage. Your First Workflow £750, live inside a week. Partner £350/mo - I keep it all working.">
+<meta name="description" content="You're using AI like a glorified Google. I set up a small team of AI assistants on your own accounts: they know your work, draft in your voice, and never send a thing without your say-so. Live inside a week. From £195.">
 <link rel="canonical" href="https://unbehind.ai">
 
-<meta property="og:title" content="Unbehind - You use AI every day. Your business doesn't.">
-<meta property="og:description" content="11 hours a week goes on admin. I build the workflows that hand them back - one at a time, live inside a week. First workflow £750; Partner £350/mo keeps it all working.">
+<meta property="og:title" content="You're using AI like a glorified Google.">
+<meta property="og:description" content="I set up a small team of AI assistants that knows your work, drafts in your voice, and never sends a thing without your say-so. Live inside a week. From £195.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://unbehind.ai">
 <meta property="og:image" content="https://unbehind.ai/og.png">
@@ -18,1494 +18,967 @@
 <meta property="og:site_name" content="Unbehind">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Unbehind - You use AI every day. Your business doesn't.">
-<meta name="twitter:description" content="11 hours a week goes on admin. I build the workflows that hand them back - live inside a week, from £750.">
+<meta name="twitter:title" content="You're using AI like a glorified Google.">
+<meta name="twitter:description" content="Your AI team, set up properly: on your accounts, in your voice, nothing sent without your say-so. From £195.">
 <meta name="twitter:image" content="https://unbehind.ai/og.png">
 
-<meta name="theme-color" content="#0A0A0B">
-<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#1C3FD7">
+<meta name="color-scheme" content="light">
 
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="preload" href="/fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/newsreader.woff2" as="font" type="font/woff2" crossorigin>
 
 <style>
+  @font-face {
+    font-family: 'Bricolage Grotesque';
+    src: url('/fonts/bricolage-grotesque.woff2') format('woff2');
+    font-weight: 200 800;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Newsreader';
+    src: url('/fonts/newsreader.woff2') format('woff2');
+    font-weight: 200 800;
+    font-style: normal;
+    font-display: swap;
+  }
+
   :root {
-    --bg:          #0A0A0B;
-    --bg-surface:  #121214;
-    --bg-elevated: #1A1A1D;
-    --ink:         #F5F5F4;
-    --ink-soft:    #A8A8A5;
-    --ink-mute:    #6E6E6B;
-    --border:      rgba(255, 255, 255, 0.08);
-    --border-soft: rgba(255, 255, 255, 0.05);
-    --border-hi:   rgba(255, 255, 255, 0.14);
+    --blue:      #1C3FD7;  /* biro blue: the colour of a signature */
+    --blue-deep: #1430AD;
+    --ink:       #0C1436;  /* blue-black writing ink */
+    --ink-soft:  #47506F;
+    --paper:     #FFFFFF;
+    --wash:      #EEF1FB;  /* carbon-copy tint */
+    --yellow:    #FFE74A;  /* highlighter: this needs you */
 
-    --grad-1: #A78BFA;
-    --grad-2: #F0ABA1;
-    --grad-3: #7DD3C0;
+    --display: 'Bricolage Grotesque', 'Arial Narrow', Arial, sans-serif;
+    --text:    'Newsreader', Georgia, 'Times New Roman', serif;
 
-    --accent:      #C7B9FF;
-    --accent-mute: #8B7FD1;
-
-    --serif: 'Instrument Serif', Georgia, serif;
-    --sans:  'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
-    --mono:  'Geist Mono', ui-monospace, monospace;
+    --wrap: 1120px;
+    --gutter: 24px;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 
   body {
-    background: var(--bg);
+    background: var(--paper);
     color: var(--ink);
-    font-family: var(--sans);
-    font-weight: 400;
-    font-size: 15px;
+    font-family: var(--text);
+    font-size: 19px;
     line-height: 1.55;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    letter-spacing: -0.005em;
-    overflow-x: hidden;
   }
 
-  /* ambient colour wash */
-  body::before {
-    content: '';
-    position: fixed;
-    top: -20vh;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 130vw;
-    height: 95vh;
-    background:
-      radial-gradient(ellipse 55% 45% at 28% 28%, rgba(167, 139, 250, 0.14), transparent 70%),
-      radial-gradient(ellipse 45% 38% at 76% 36%, rgba(240, 171, 161, 0.10), transparent 70%),
-      radial-gradient(ellipse 55% 42% at 50% 82%, rgba(125, 211, 192, 0.07), transparent 70%);
-    filter: blur(70px);
-    pointer-events: none;
-    z-index: 0;
-  }
+  a { color: inherit; }
+  ::selection { background: var(--yellow); color: var(--ink); }
 
-  /* film grain */
-  body::after {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    background-size: 240px 240px;
-    opacity: 0.05;
-    mix-blend-mode: overlay;
-    pointer-events: none;
-    z-index: 3;
-  }
-
-  a { color: inherit; text-decoration: none; }
-
-  ::selection { background: var(--grad-1); color: var(--bg); }
-
-  .ds {
-    font-family: var(--serif);
-    font-style: italic;
-    font-weight: 400;
-    letter-spacing: 0;
-    background: linear-gradient(110deg, var(--grad-1) 0%, var(--grad-2) 55%, var(--grad-3) 110%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    display: inline-block;
-    padding: 0.04em 0.14em 0.06em 0.03em;
-    margin: -0.04em -0.14em -0.06em -0.03em;
-    line-height: 1.1;
-  }
-
-  /* ============ NAV ============ */
-
-  .nav-wrap {
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    background: rgba(10, 10, 11, 0.72);
-    border-bottom: 1px solid var(--border-soft);
-  }
-
-  nav.top {
-    padding: 16px 28px;
-    max-width: 1180px;
+  .wrap {
+    max-width: var(--wrap);
     margin: 0 auto;
+    padding-left: var(--gutter);
+    padding-right: var(--gutter);
+  }
+
+  h1, h2, h3 {
+    font-family: var(--display);
+    font-weight: 800;
+    letter-spacing: -0.035em;
+    line-height: 0.98;
+    text-wrap: balance;
+  }
+
+  h2 { font-size: clamp(34px, 5vw, 62px); max-width: 19ch; }
+
+  .lead {
+    font-size: clamp(20px, 2vw, 23px);
+    line-height: 1.5;
+    max-width: 34em;
+  }
+
+  /* ---------- buttons ---------- */
+
+  .btn {
+    display: inline-block;
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 17px;
+    letter-spacing: -0.01em;
+    line-height: 1;
+    text-decoration: none;
+    padding: 17px 26px;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: transform 0.12s ease, background-color 0.12s ease;
+  }
+  .btn:hover { transform: translateY(-2px); }
+  .btn:active { transform: translateY(0); }
+
+  .btn-yellow { background: var(--yellow); color: var(--ink); }
+  .btn-yellow:hover { background: #FFF07A; }
+  .btn-ink { background: var(--ink); color: #fff; }
+  .btn-ink:hover { background: #18245A; }
+  .btn-blue { background: var(--blue); color: #fff; }
+  .btn-blue:hover { background: var(--blue-deep); }
+
+  .text-link {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 16px;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 2px;
+  }
+
+  :focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; border-radius: 4px; }
+  .on-blue :focus-visible { outline-color: var(--yellow); }
+  .on-yellow :focus-visible { outline-color: var(--ink); }
+
+  /* ---------- top: nav + hero share the blue ---------- */
+
+  .top { background: var(--blue); color: #fff; }
+
+  .nav {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
 
   .wordmark {
-    font-family: var(--sans);
-    font-weight: 500;
-    font-size: 22px;
-    letter-spacing: -0.02em;
-    color: var(--ink);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .wordmark::before {
-    content: '';
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    background: conic-gradient(from 180deg, var(--grad-1), var(--grad-2), var(--grad-3), var(--grad-1));
-    filter: saturate(0.9) brightness(1.05);
-  }
-
-  .nav-right { display: flex; align-items: center; gap: 22px; }
-
-  .nav-link {
-    font-family: var(--mono);
-    font-size: 12.5px;
-    letter-spacing: 0.01em;
-    color: var(--ink-soft);
-    transition: color 0.2s;
-  }
-  .nav-link:hover { color: var(--ink); }
-
-  .btn {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    padding: 11px 20px;
-    border-radius: 999px;
-    font-family: var(--sans);
-    font-size: 14px;
+    gap: 9px;
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: 24px;
+    letter-spacing: -0.035em;
+    text-decoration: none;
+    color: inherit;
+  }
+  .wordmark svg { width: 26px; height: 26px; flex: none; }
+
+  .nav-links { display: flex; align-items: center; gap: 28px; }
+  .nav-links a:not(.btn) {
+    font-family: var(--display);
     font-weight: 500;
-    letter-spacing: -0.005em;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    border: 1px solid transparent;
+    font-size: 16px;
+    text-decoration: none;
+    opacity: 0.9;
   }
-
-  .btn-primary {
-    background: var(--ink);
-    color: var(--bg);
-    border-color: var(--ink);
-  }
-  .btn-primary:hover { background: #fff; transform: translateY(-1px); }
-
-  .btn-ghost {
-    background: transparent;
-    color: var(--ink);
-    border-color: var(--border-hi);
-  }
-  .btn-ghost:hover { border-color: var(--ink); background: rgba(255, 255, 255, 0.04); }
-
-  .btn-nav { padding: 8px 16px; font-size: 13px; }
-
-  /* ============ HERO ============ */
+  .nav-links a:not(.btn):hover { opacity: 1; text-decoration: underline; text-underline-offset: 5px; }
+  .nav-links .btn { padding: 12px 18px; font-size: 15px; }
 
   .hero {
-    position: relative;
-    z-index: 1;
-    max-width: 1180px;
-    margin: 0 auto;
-    padding: 96px 28px 0;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+    gap: 64px;
     align-items: center;
-  }
-
-  .eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    font-family: var(--mono);
-    font-size: 12px;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
-    padding: 7px 16px 7px 12px;
-    border-radius: 999px;
-    border: 1px solid var(--border);
-    background: rgba(255, 255, 255, 0.02);
-    margin-bottom: 36px;
-  }
-
-  .eyebrow::before {
-    content: '';
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--grad-2);
-    box-shadow: 0 0 10px var(--grad-2);
+    padding-top: 56px;
+    padding-bottom: 96px;
   }
 
   .hero h1 {
-    font-family: var(--sans);
-    font-weight: 300;
-    font-size: clamp(42px, 7.4vw, 88px);
-    line-height: 1.02;
-    letter-spacing: -0.035em;
+    font-size: clamp(46px, 7.2vw, 100px);
+    line-height: 0.93;
+    letter-spacing: -0.045em;
+    margin-bottom: 28px;
+  }
+
+  .hero .lead { margin-bottom: 32px; color: rgba(255, 255, 255, 0.94); }
+
+  .hero-actions { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; margin-bottom: 18px; }
+  .hero-note { font-size: 17px; color: rgba(255, 255, 255, 0.85); max-width: 30em; }
+
+  /* ---------- the brief: a working demo ---------- */
+
+  .brief-holder { min-width: 0; }
+
+  .brief {
+    background: #fff;
     color: var(--ink);
-    max-width: 15ch;
-    margin: 0 auto 28px;
+    border-radius: 6px;
+    padding: 26px 26px 10px;
+    box-shadow: 0 30px 70px rgba(5, 14, 70, 0.45), 0 2px 0 rgba(5, 14, 70, 0.2);
+    transform: rotate(1.4deg);
   }
 
-  .hero h1 .ds { font-size: 0.98em; }
-
-  .hero-sub {
-    font-size: clamp(16px, 1.6vw, 19px);
-    line-height: 1.6;
-    color: var(--ink-soft);
-    max-width: 620px;
-    margin: 0 auto 18px;
-  }
-  .hero-sub strong { color: var(--ink); font-weight: 500; }
-
-  .hero-clarifier {
-    font-family: var(--mono);
-    font-size: 12px;
-    line-height: 1.6;
-    color: var(--ink-mute);
-    max-width: 560px;
-    margin: 0 auto 40px;
-  }
-
-  .hero-ctas {
-    display: flex;
-    gap: 12px;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 12px;
-  }
-
-  .hero-micro {
-    font-family: var(--mono);
-    font-size: 11.5px;
-    color: var(--ink-mute);
-    margin-bottom: 24px;
-  }
-
-  /* the rising orb - the name is the picture */
-  .horizon {
-    position: relative;
-    width: 100%;
-    height: clamp(160px, 26vw, 300px);
-    overflow: hidden;
-    pointer-events: none;
-  }
-
-  .horizon .sun {
-    position: absolute;
-    left: 50%;
-    top: clamp(28px, 5vw, 56px);
-    transform: translateX(-50%);
-    width: clamp(420px, 58vw, 680px);
-    aspect-ratio: 1;
-    border-radius: 50%;
-    background:
-      radial-gradient(circle at 32% 26%, rgba(255, 255, 255, 0.20), transparent 48%),
-      conic-gradient(from 210deg,
-        var(--grad-1) 0%,
-        var(--grad-2) 35%,
-        var(--grad-3) 65%,
-        var(--grad-1) 100%);
-    box-shadow:
-      0 0 120px rgba(167, 139, 250, 0.40),
-      0 0 60px rgba(240, 171, 161, 0.30);
-    filter: saturate(0.95) brightness(1.04);
-    -webkit-mask-image: linear-gradient(180deg, #000 38%, transparent 72%);
-    mask-image: linear-gradient(180deg, #000 38%, transparent 72%);
-    animation: sunrise 1.6s cubic-bezier(0.22, 1, 0.36, 1) both;
-  }
-
-  @keyframes sunrise {
-    from { transform: translateX(-50%) translateY(9%); opacity: 0.4; }
-    to   { transform: translateX(-50%) translateY(0); opacity: 1; }
-  }
-
-  .horizon::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 56%;
-    background: linear-gradient(180deg, transparent, var(--bg) 82%);
-  }
-
-  /* ============ TICKER ============ */
-
-  .ticker {
-    position: relative;
-    z-index: 1;
-    border-top: 1px solid var(--border-soft);
-    border-bottom: 1px solid var(--border-soft);
-    overflow: hidden;
-    padding: 16px 0;
-    background: rgba(255, 255, 255, 0.012);
-  }
-
-  .ticker-track {
-    display: flex;
-    width: max-content;
-    animation: marquee 46s linear infinite;
-  }
-
-  .ticker-set {
-    display: flex;
-    align-items: center;
-    flex-shrink: 0;
-  }
-
-  .ticker-set span {
-    font-family: var(--mono);
-    font-size: 12px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
-    white-space: nowrap;
-    padding: 0 14px;
-  }
-
-  .ticker-set i {
-    font-style: normal;
-    font-size: 11px;
-    background: linear-gradient(110deg, var(--grad-1), var(--grad-2), var(--grad-3));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  @keyframes marquee { to { transform: translateX(-50%); } }
-
-  /* ============ PROOF STRIP ============ */
-
-  .proof {
-    max-width: 1180px;
-    margin: 0 auto;
-    padding: 36px 28px;
-    position: relative;
-    z-index: 1;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 28px 64px;
-  }
-
-  .proof-block { min-width: 0; }
-
-  .proof-label {
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--ink-mute);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 12px;
-  }
-  .proof-label::before {
-    content: '';
-    width: 14px;
-    height: 1px;
-    background: var(--ink-mute);
-  }
-  .proof-label .live-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--grad-3);
-    box-shadow: 0 0 10px var(--grad-3);
-    animation: pulse 2.4s ease-in-out infinite;
-  }
-
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.35; }
-  }
-
-  .proof-row {
-    display: flex;
-    gap: 28px;
-    flex-wrap: wrap;
-    font-size: 14.5px;
-    font-weight: 500;
-    color: var(--ink-soft);
-  }
-  .proof-row a {
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 2px;
-    transition: all 0.2s;
-  }
-  .proof-row a:hover { color: var(--ink); border-bottom-color: var(--ink); }
-
-  .proof-row p {
-    font-weight: 400;
-    font-size: 14.5px;
-    line-height: 1.6;
-    color: var(--ink-soft);
-  }
-  .proof-row p strong { color: var(--ink); font-weight: 500; }
-
-  /* ============ SECTION BASE ============ */
-
-  section {
-    padding: 104px 28px;
-    max-width: 1180px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
-  }
-
-  .section-head { max-width: 740px; margin-bottom: 56px; }
-
-  .section-tag {
-    font-family: var(--mono);
-    font-size: 12px;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--ink-mute);
-    margin-bottom: 18px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .section-tag::before {
-    content: '';
-    width: 18px;
-    height: 1px;
-    background: var(--ink-mute);
-  }
-
-  h2 {
-    font-family: var(--sans);
-    font-weight: 300;
-    font-size: clamp(30px, 4.2vw, 48px);
-    line-height: 1.08;
-    letter-spacing: -0.03em;
-    color: var(--ink);
-    max-width: 22ch;
-  }
-
-  h2 .ds { font-size: 1.0em; }
-
-  .section-lead {
-    margin-top: 18px;
-    font-size: 16.5px;
-    line-height: 1.6;
-    color: var(--ink-soft);
-    max-width: 580px;
-  }
-
-  /* ============ SOUND FAMILIAR ============ */
-
-  .familiar-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-  }
-
-  .familiar-card {
-    background: var(--bg-surface);
-    border: 1px solid var(--border);
-    border-radius: 18px;
-    padding: 32px 26px 28px;
-    position: relative;
-    transition: all 0.25s ease;
-  }
-  .familiar-card:hover {
-    border-color: var(--border-hi);
-    transform: translateY(-2px);
-  }
-
-  .familiar-card::before {
-    content: '\201C';
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: 56px;
-    line-height: 0.6;
-    display: block;
-    margin-bottom: 14px;
-    background: linear-gradient(110deg, var(--grad-1), var(--grad-2));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  .familiar-card p {
-    font-size: 15.5px;
-    line-height: 1.55;
-    color: var(--ink);
-    letter-spacing: -0.005em;
-  }
-
-  /* ============ NOT A COURSE ============ */
-
-  .statement {
-    text-align: center;
-    padding-top: 64px;
-    padding-bottom: 64px;
-  }
-
-  .statement h2 {
-    margin: 0 auto 22px;
-    max-width: 20ch;
-    font-size: clamp(34px, 5vw, 58px);
-  }
-
-  .statement p {
-    font-size: 17px;
-    line-height: 1.65;
-    color: var(--ink-soft);
-    max-width: 560px;
-    margin: 0 auto;
-  }
-  .statement p strong { color: var(--ink); font-weight: 500; }
-
-  /* ============ HOW IT WORKS ============ */
-
-  .steps {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    counter-reset: step;
-  }
-
-  .step {
-    background: var(--bg-surface);
-    border: 1px solid var(--border);
-    border-radius: 18px;
-    padding: 30px 26px;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.25s ease;
-  }
-  .step:hover { border-color: var(--border-hi); }
-
-  .step::before {
-    counter-increment: step;
-    content: counter(step, decimal-leading-zero);
-    position: absolute;
-    top: -18px;
-    right: 4px;
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: 110px;
-    line-height: 1;
-    color: rgba(255, 255, 255, 0.045);
-    pointer-events: none;
-  }
-
-  .step .day {
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 12px;
-  }
-
-  .step h4 {
-    font-family: var(--sans);
-    font-weight: 500;
-    font-size: 19px;
-    letter-spacing: -0.015em;
-    color: var(--ink);
-    margin-bottom: 10px;
-  }
-
-  .step p {
-    font-size: 14.5px;
-    color: var(--ink-soft);
-    line-height: 1.6;
-  }
-
-  .step p .light {
-    color: var(--ink-mute);
-    font-size: 13.5px;
-    display: block;
-    margin-top: 8px;
-  }
-
-  .after-state {
-    margin-top: 28px;
-    padding: 24px 28px;
-    border: 1px solid var(--border);
-    border-radius: 18px;
-    background: linear-gradient(165deg, rgba(125, 211, 192, 0.07), transparent 60%);
-    font-size: 16px;
-    line-height: 1.55;
-    color: var(--ink);
-    display: flex;
-    gap: 16px;
-    align-items: baseline;
-  }
-
-  .after-state .tag {
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--grad-3);
-    flex-shrink: 0;
-  }
-
-  .after-state span.muted { color: var(--ink-soft); }
-
-  /* ============ BUILD LIST ============ */
-
-  .build-list { border-top: 1px solid var(--border); }
-
-  .build-row {
-    display: grid;
-    grid-template-columns: 64px minmax(0, 0.9fr) minmax(0, 1.1fr);
-    gap: 24px;
-    align-items: baseline;
-    padding: 22px 8px;
-    border-bottom: 1px solid var(--border);
-    transition: all 0.22s ease;
-  }
-  .build-row:hover {
-    background: rgba(255, 255, 255, 0.018);
-    padding-left: 16px;
-    padding-right: 0;
-  }
-
-  .build-row .num {
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: 22px;
-    background: linear-gradient(110deg, var(--grad-1), var(--grad-2), var(--grad-3));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  .build-row h4 {
-    font-family: var(--sans);
-    font-weight: 500;
-    font-size: 17px;
-    letter-spacing: -0.015em;
-    color: var(--ink);
-  }
-
-  .build-row p {
-    font-size: 14.5px;
-    color: var(--ink-soft);
-    line-height: 1.55;
-  }
-
-  /* ============ PRICING ============ */
-
-  .services {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-    gap: 20px;
-    align-items: stretch;
-  }
-
-  .service {
-    background: var(--bg-surface);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: 30px 28px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    transition: all 0.25s ease;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .service:hover {
-    border-color: var(--border-hi);
-    transform: translateY(-2px);
-  }
-
-  .service.featured {
-    background:
-      linear-gradient(var(--bg-surface), var(--bg-surface)) padding-box,
-      linear-gradient(150deg, var(--grad-1), var(--grad-2) 55%, var(--grad-3)) border-box;
-    border: 1px solid transparent;
-  }
-  .service.featured::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(165deg, rgba(167, 139, 250, 0.10), rgba(240, 171, 161, 0.03) 55%, transparent);
-    pointer-events: none;
-  }
-  .service.featured > * { position: relative; }
-
-  .service-tag {
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.06em;
-    color: var(--ink-mute);
-    text-transform: uppercase;
-  }
-  .service.featured .service-tag { color: var(--accent); }
-
-  .service h3 {
-    font-family: var(--sans);
-    font-weight: 300;
-    font-size: 38px;
-    letter-spacing: -0.03em;
-    color: var(--ink);
-    line-height: 1;
-  }
-
-  .service h3 .unit {
-    font-size: 17px;
-    color: var(--ink-soft);
-    font-weight: 400;
-    letter-spacing: -0.01em;
-  }
-
-  .service .fit {
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--ink);
-    letter-spacing: -0.005em;
-  }
-
-  .service-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding-top: 14px;
-    border-top: 1px solid var(--border);
-    flex-grow: 1;
-  }
-
-  .service-list li {
-    font-size: 13.5px;
-    line-height: 1.5;
-    color: var(--ink);
-    display: flex;
-    gap: 10px;
-    align-items: flex-start;
-  }
-
-  .service-list li::before {
-    content: '';
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    background: rgba(125, 211, 192, 0.16);
-    flex-shrink: 0;
-    margin-top: 3px;
-    background-image: radial-gradient(circle, var(--grad-3) 2px, transparent 3px);
-  }
-
-  .service-cta {
-    margin-top: 8px;
-    font-family: var(--sans);
-    font-size: 13.5px;
-    font-weight: 500;
-    color: var(--ink);
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 11px 16px;
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid var(--border);
-    transition: all 0.2s ease;
-    align-self: flex-start;
-  }
-  .service-cta:hover {
-    background: var(--ink);
-    color: var(--bg);
-    border-color: var(--ink);
-  }
-
-  /* ============ GUARANTEE ============ */
-
-  .guarantee {
-    margin-top: 44px;
-    background: var(--bg-surface);
-    border: 1px solid var(--border);
-    border-radius: 18px;
-    padding: 26px 30px;
-    display: flex;
-    gap: 22px;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .guarantee::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 4px;
-    height: 100%;
-    background: linear-gradient(180deg, var(--grad-1), var(--grad-2), var(--grad-3));
-  }
-
-  .guarantee-seal {
-    flex-shrink: 0;
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    background: radial-gradient(circle at 30% 30%, rgba(125, 211, 192, 0.35), rgba(167, 139, 250, 0.18));
-    border: 1px solid rgba(125, 211, 192, 0.35);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--ink);
-    font-family: var(--mono);
-    font-size: 14px;
-  }
-
-  .guarantee p { font-size: 16px; line-height: 1.45; color: var(--ink); }
-  .guarantee p strong { font-weight: 500; }
-  .guarantee p span.light {
-    color: var(--ink-soft);
-    display: block;
-    font-size: 14px;
-    margin-top: 2px;
-  }
-
-  /* ============ FOUNDER ============ */
-
-  .founder {
-    background: var(--bg-surface);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: 44px;
-    display: grid;
-    grid-template-columns: 132px 1fr;
-    gap: 36px;
-    align-items: flex-start;
-    max-width: 920px;
-    margin: 0 auto;
-  }
-
-  .founder-avatar {
-    width: 132px;
-    height: 132px;
-    border-radius: 999px;
-    background: linear-gradient(135deg, var(--grad-1) 0%, var(--grad-2) 60%, var(--grad-3) 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: 58px;
-    color: var(--bg);
-    flex-shrink: 0;
-  }
-
-  .founder-note { min-width: 0; }
-
-  .founder-note .meta {
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--ink-mute);
-    margin-bottom: 10px;
-  }
-
-  .founder-name {
-    font-family: var(--sans);
-    font-weight: 500;
-    font-size: 22px;
-    letter-spacing: -0.02em;
-    color: var(--ink);
-    margin-bottom: 14px;
-  }
-
-  .founder-note > p {
-    font-size: 15.5px;
-    line-height: 1.6;
-    color: var(--ink-soft);
-    margin-bottom: 18px;
-  }
-  .founder-note > p strong { color: var(--ink); font-weight: 500; }
-
-  .founder-pull {
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: 24px;
-    line-height: 1.3;
-    margin-bottom: 20px;
-    background: linear-gradient(110deg, var(--grad-1), var(--grad-2), var(--grad-3));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  .founder-chips {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
-  }
-
-  .chip {
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.02em;
-    color: var(--ink);
-    padding: 6px 12px;
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid var(--border);
-  }
-
-  .founder-links {
-    font-size: 13px;
-    color: var(--ink-mute);
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-
-  .founder-links a {
-    color: var(--ink-soft);
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    border-bottom: 1px solid var(--border-hi);
-    padding-bottom: 2px;
-    transition: all 0.2s;
-  }
-  .founder-links a:hover { color: var(--ink); border-bottom-color: var(--ink); }
-
-  /* ============ FAQ ============ */
-
-  .faq-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 28px 48px;
-  }
-
-  .faq-item h4 {
-    font-family: var(--sans);
-    font-weight: 500;
-    font-size: 16px;
-    letter-spacing: -0.015em;
-    color: var(--ink);
-    margin-bottom: 8px;
-    display: flex;
-    gap: 10px;
-    align-items: flex-start;
-  }
-
-  .faq-item h4::before {
-    content: '';
-    flex-shrink: 0;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    background: rgba(167, 139, 250, 0.12);
-    border: 1px solid rgba(167, 139, 250, 0.25);
-    margin-top: 2px;
-    background-image: radial-gradient(circle, var(--grad-1) 3px, transparent 4px);
-  }
-
-  .faq-item p {
-    font-size: 14.5px;
-    line-height: 1.6;
-    color: var(--ink-soft);
-    padding-left: 28px;
-  }
-
-  /* ============ CTA ============ */
-
-  .cta {
-    text-align: center;
-    padding: 110px 28px 130px;
-    max-width: 1180px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
-  }
-
-  .cta h2 {
-    margin: 0 auto 22px;
-    max-width: 16ch;
-    font-size: clamp(38px, 6vw, 68px);
-  }
-
-  .cta-note {
-    font-size: 15.5px;
-    color: var(--ink-soft);
-    margin: 0 auto 36px;
-    max-width: 480px;
-  }
-
-  .cta-row {
-    display: flex;
-    gap: 12px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 22px;
-  }
-
-  .capacity {
-    font-family: var(--mono);
-    font-size: 12px;
-    color: var(--ink-mute);
-    display: inline-flex;
-    gap: 8px;
-    align-items: center;
-  }
-
-  .capacity::before {
-    content: '';
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--grad-3);
-    box-shadow: 0 0 10px var(--grad-3);
-  }
-
-  .cta-glow {
-    position: absolute;
-    top: 10%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: min(700px, 90vw);
-    height: 70%;
-    background: radial-gradient(ellipse 55% 45% at 50% 40%, rgba(167, 139, 250, 0.13), transparent 70%);
-    filter: blur(30px);
-    pointer-events: none;
-    z-index: -1;
-  }
-
-  /* ============ FOOTER ============ */
-
-  footer {
-    padding: 36px 28px;
-    max-width: 1180px;
-    margin: 0 auto;
-    border-top: 1px solid var(--border-soft);
+  .brief-head {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    font-family: var(--mono);
-    font-size: 12px;
-    color: var(--ink-mute);
+    align-items: baseline;
     flex-wrap: wrap;
-    gap: 12px;
-    position: relative;
-    z-index: 1;
+    gap: 4px 12px;
+    margin-bottom: 14px;
+  }
+  .brief-head h2 {
+    font-size: 24px;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    max-width: none;
+  }
+  .brief-head time { font-family: var(--display); font-weight: 500; font-size: 15px; color: var(--ink-soft); white-space: nowrap; }
+
+  .brief-status {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.35;
+    background: var(--yellow);
+    padding: 10px 12px;
+    border-radius: 4px;
+    margin-bottom: 4px;
   }
 
-  footer a { color: var(--ink-mute); transition: color 0.2s; }
-  footer a:hover { color: var(--ink); }
-
-  /* ============ A11Y ============ */
-
-  .btn:focus-visible, .service-cta:focus-visible {
-    outline: 2px solid var(--grad-1);
-    outline-offset: 3px;
-  }
-  a:focus-visible {
-    outline: 2px solid var(--grad-1);
-    outline-offset: 3px;
-    border-radius: 2px;
-  }
-
-  /* ============ REVEAL ============ */
-
-  .reveal {
+  .draft {
+    padding: 18px 0 16px;
+    border-top: 2px solid var(--wash);
     opacity: 0;
-    transform: translateY(16px);
-    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    transform: translateY(8px);
+    animation: arrive 0.5s ease-out forwards;
   }
-  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .draft:first-of-type { border-top: 0; }
+  .draft:nth-of-type(1) { animation-delay: 0.35s; }
+  .draft:nth-of-type(2) { animation-delay: 0.6s; }
+  .draft:nth-of-type(3) { animation-delay: 0.85s; }
 
-  /* ============ RESPONSIVE ============ */
+  @keyframes arrive { to { opacity: 1; transform: none; } }
 
-  @media (max-width: 960px) {
-    .familiar-grid { grid-template-columns: 1fr; }
-    .steps { grid-template-columns: 1fr; }
-    .proof { grid-template-columns: 1fr; gap: 28px; }
-    .build-row {
-      grid-template-columns: 48px 1fr;
-      gap: 8px 18px;
+  .draft h3 {
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin-bottom: 5px;
+  }
+  .draft p { font-size: 16.5px; line-height: 1.45; color: var(--ink-soft); margin-bottom: 12px; }
+
+  .draft-actions { display: flex; align-items: center; gap: 8px; min-height: 40px; }
+
+  .draft-actions button {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 1;
+    padding: 11px 16px;
+    border-radius: 6px;
+    border: 2px solid var(--blue);
+    cursor: pointer;
+    transition: background-color 0.12s ease;
+  }
+  .approve { background: var(--blue); color: #fff; }
+  .approve:hover { background: var(--blue-deep); border-color: var(--blue-deep); }
+  .hold { background: #fff; color: var(--blue); }
+  .hold:hover { background: var(--wash); }
+
+  .draft-state {
+    display: none;
+    align-items: center;
+    gap: 9px;
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--blue);
+  }
+  .draft-state svg { width: 30px; height: 26px; flex: none; }
+  .draft-state path {
+    fill: none;
+    stroke: var(--blue);
+    stroke-width: 4.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 60;
+    stroke-dashoffset: 60;
+  }
+
+  .draft.is-sent .draft-actions button { display: none; }
+  .draft.is-sent .draft-state.sent { display: inline-flex; }
+  .draft.is-sent .draft-state.sent path { animation: tick 0.35s ease-out forwards; }
+  @keyframes tick { to { stroke-dashoffset: 0; } }
+
+  .draft.is-held .hold { display: none; }
+  .draft.is-held .draft-state.held { display: inline-flex; color: var(--ink-soft); font-weight: 600; }
+  .draft.is-held h3, .draft.is-held p { opacity: 0.55; }
+
+  .brief-caption {
+    margin-top: 22px;
+    font-size: 17px;
+    color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+  }
+
+  /* ---------- bands ---------- */
+
+  .band { padding-top: 104px; padding-bottom: 104px; }
+  .band-wash { background: var(--wash); }
+  .band-blue { background: var(--blue); color: #fff; }
+  .band-yellow { background: var(--yellow); }
+
+  .band h2 { margin-bottom: 36px; }
+
+  /* sound familiar */
+
+  .familiar { list-style: none; max-width: 900px; }
+  .familiar li {
+    font-size: clamp(22px, 2.9vw, 34px);
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    padding: 20px 0;
+    border-top: 2px solid var(--ink);
+  }
+  .familiar li:last-child { border-bottom: 2px solid var(--ink); }
+
+  .turn {
+    margin-top: 44px;
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(24px, 3vw, 36px);
+    letter-spacing: -0.03em;
+    line-height: 1.12;
+    max-width: 24ch;
+    color: var(--blue);
+  }
+  .turn + p { margin-top: 18px; }
+
+  /* two-column prose sections */
+
+  .split {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 64px;
+    align-items: start;
+  }
+  .split h2 { margin-bottom: 0; }
+  .prose p { max-width: 34em; }
+  .prose p + p { margin-top: 1.1em; }
+  .prose .aside {
+    margin-top: 1.6em;
+    padding: 16px 18px;
+    background: var(--wash);
+    border-radius: 6px;
+    font-size: 18px;
+  }
+  .band-wash .prose .aside { background: #fff; }
+
+  /* the team */
+
+  .team { list-style: none; margin-top: 12px; }
+  .team li {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 64px;
+    padding: 26px 0;
+    border-top: 2px solid var(--ink);
+    align-items: baseline;
+  }
+  .team li:last-child { border-bottom: 2px solid var(--ink); }
+  .team h3 { font-size: clamp(26px, 3vw, 36px); letter-spacing: -0.035em; }
+  .team p { max-width: 32em; }
+  .team-note { margin-top: 30px; max-width: 34em; }
+
+  /* control */
+
+  .control-grid {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px 64px;
+    margin-top: 8px;
+  }
+  .control-grid h3 { font-size: 25px; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 8px; color: var(--yellow); }
+  .control-grid p { color: rgba(255, 255, 255, 0.94); max-width: 30em; }
+
+  .plain-truth {
+    margin-top: 64px;
+    padding-top: 36px;
+    border-top: 2px solid rgba(255, 255, 255, 0.5);
+    font-size: clamp(22px, 2.6vw, 30px);
+    line-height: 1.32;
+    max-width: 30em;
+  }
+
+  /* steps */
+
+  .steps {
+    list-style: none;
+    counter-reset: step;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 48px;
+  }
+  .steps li { counter-increment: step; }
+  .steps li::before {
+    content: counter(step);
+    display: block;
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: 84px;
+    line-height: 0.85;
+    letter-spacing: -0.05em;
+    color: var(--blue);
+    margin-bottom: 18px;
+  }
+  .steps h3 { font-size: 28px; margin-bottom: 10px; }
+
+  /* prices */
+
+  .prices { list-style: none; }
+  .price {
+    display: grid;
+    grid-template-columns: minmax(0, 0.62fr) minmax(0, 1fr) 230px;
+    gap: 40px;
+    align-items: start;
+    padding: 30px 24px;
+    border-top: 2px solid var(--ink);
+  }
+  .price:last-child { border-bottom: 2px solid var(--ink); }
+  .price h3 { font-size: 30px; margin-bottom: 8px; }
+  .price .who { font-size: 17px; color: var(--ink-soft); line-height: 1.4; }
+  .price .what { max-width: 30em; }
+  .price .cost {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: clamp(34px, 4vw, 50px);
+    letter-spacing: -0.045em;
+    line-height: 0.95;
+    text-align: right;
+    white-space: nowrap;
+  }
+  .price .cost small {
+    display: block;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+    margin-top: 8px;
+    white-space: normal;
+  }
+
+  .price.is-main { background: var(--yellow); border-radius: 6px; border-top-color: transparent; }
+  .price.is-main + .price { border-top-color: transparent; }
+  .price.is-main .who { color: var(--ink); }
+  .founding {
+    display: inline-block;
+    margin-top: 14px;
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.3;
+    background: var(--ink);
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 4px;
+  }
+
+  .price-notes { margin-top: 30px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 64px; }
+  .price-notes p { font-size: 18px; max-width: 30em; }
+  .price-cta { margin-top: 44px; display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+
+  /* bio */
+
+  .signoff { margin-top: 1.6em; display: flex; gap: 24px; flex-wrap: wrap; }
+
+  /* questions */
+
+  .questions { max-width: 860px; }
+  .questions details { border-top: 2px solid var(--ink); }
+  .questions details:last-child { border-bottom: 2px solid var(--ink); }
+  .questions summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 20px;
+    padding: 22px 0;
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(20px, 2.2vw, 25px);
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+  }
+  .questions summary::-webkit-details-marker { display: none; }
+  .questions summary::after {
+    content: '+';
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 0.6;
+    color: var(--blue);
+    flex: none;
+    transition: transform 0.15s ease;
+  }
+  .questions details[open] summary::after { transform: rotate(45deg); }
+  .questions details p { padding: 0 0 26px; max-width: 34em; }
+
+  /* closing band */
+
+  .closing h2 { font-size: clamp(40px, 6.4vw, 84px); max-width: 14ch; margin-bottom: 26px; letter-spacing: -0.045em; line-height: 0.94; }
+  .closing .lead { margin-bottom: 34px; }
+  .closing-actions { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+
+  footer {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--ink-soft);
+  }
+
+  /* sticky call bar, phones only */
+
+  .callbar { display: none; }
+
+  /* ---------- responsive ---------- */
+
+  @media (max-width: 940px) {
+    body { font-size: 18px; }
+    .hero { grid-template-columns: 1fr; gap: 48px; padding-top: 36px; padding-bottom: 72px; }
+    .brief { transform: none; max-width: 520px; }
+    .brief-caption { text-align: left; }
+    .split { grid-template-columns: 1fr; gap: 28px; }
+    .team li { grid-template-columns: 1fr; gap: 8px; padding: 22px 0; }
+    .control-grid { grid-template-columns: 1fr; gap: 30px; }
+    .steps { grid-template-columns: 1fr; gap: 36px; }
+    .steps li::before { font-size: 64px; margin-bottom: 12px; }
+    .price { grid-template-columns: 1fr; gap: 14px; padding: 26px 18px; }
+    .price > div:first-child { display: contents; }
+    .price h3 { order: -3; margin-bottom: 0; }
+    .price .cost { order: -2; text-align: left; min-width: 0; }
+    .price .who { order: -1; }
+    .price-notes { grid-template-columns: 1fr; }
+    .band { padding-top: 72px; padding-bottom: 72px; }
+    .band h2 { margin-bottom: 28px; }
+  }
+
+  @media (max-width: 720px) {
+    .nav-links a:not(.btn) { display: none; }
+    .wordmark { font-size: 22px; }
+    .hero-actions .btn { width: 100%; text-align: center; }
+    .closing-actions .btn, .price-cta .btn { width: 100%; text-align: center; }
+    .brief { padding: 22px 20px 6px; }
+    .brief-head h2 { font-size: 22px; }
+
+    .callbar {
+      display: flex;
+      position: fixed;
+      left: 0; right: 0; bottom: 0;
+      z-index: 20;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+      background: var(--ink);
+      color: #fff;
+      font-family: var(--display);
+      font-weight: 600;
+      font-size: 15px;
+      line-height: 1.2;
+      transform: translateY(110%);
+      transition: transform 0.25s ease;
     }
-    .build-row p { grid-column: 2; }
-  }
-
-  @media (max-width: 880px) {
-    .faq-grid { grid-template-columns: 1fr; }
-    .founder { grid-template-columns: 1fr; gap: 24px; padding: 32px; }
-    .founder-avatar { width: 92px; height: 92px; font-size: 42px; }
-  }
-
-  @media (max-width: 560px) {
-    nav.top { padding: 14px 20px; }
-    .nav-link { display: none; }
-    .nav-right { gap: 10px; }
-
-    .hero { padding-top: 64px; }
-    .hero h1 { font-size: clamp(38px, 11vw, 52px); }
-    .hero-sub { font-size: 16px; }
-    .hero-ctas .btn { width: 100%; justify-content: center; }
-    .hero-ctas { width: 100%; max-width: 340px; }
-
-    section { padding: 72px 20px; }
-    .section-head { margin-bottom: 36px; }
-    .statement { padding-top: 48px; padding-bottom: 48px; }
-
-    .proof { padding: 28px 20px; }
-    .cta { padding: 72px 20px 90px; }
-
-    .guarantee { flex-direction: column; align-items: flex-start; gap: 14px; padding: 22px; }
-    .after-state { flex-direction: column; gap: 8px; }
+    .callbar.is-up { transform: none; }
+    .callbar .btn { padding: 13px 18px; font-size: 15px; white-space: nowrap; }
+    body { padding-bottom: 0; }
+    footer { padding-bottom: 96px; }
   }
 
   @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
-    }
-    .reveal { opacity: 1 !important; transform: none !important; }
-    .ticker-track { animation: none !important; }
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation-duration: 0.01ms !important; animation-delay: 0s !important; transition-duration: 0.01ms !important; }
   }
 </style>
 </head>
 <body>
 
-<div class="nav-wrap">
-  <nav class="top">
-    <a href="/" class="wordmark">Unbehind</a>
-    <div class="nav-right">
-      <a href="#how" class="nav-link">How it works</a>
-      <a href="#offer" class="nav-link">Pricing</a>
-      <a href="#faq" class="nav-link">FAQ</a>
-      <a href="https://calendly.com/james-harrop/30min" target="_blank" rel="noopener" class="btn btn-primary btn-nav">Pick your workflow</a>
+<div class="top on-blue">
+  <nav class="nav wrap" aria-label="Main">
+    <a href="/" class="wordmark">
+      <svg viewBox="0 0 26 26" aria-hidden="true"><rect width="26" height="26" rx="6" fill="#FFE74A"/><path d="M6.5 13.6l4.3 4.4 8.7-10" fill="none" stroke="#0C1436" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Unbehind
+    </a>
+    <div class="nav-links">
+      <a href="#how">How it works</a>
+      <a href="#pricing">Prices</a>
+      <a href="#questions">Questions</a>
+      <a href="https://calendly.com/james-harrop/30min" target="_blank" rel="noopener" class="btn btn-yellow">Book a free call</a>
     </div>
   </nav>
+
+  <header class="hero wrap">
+    <div>
+      <h1>You&rsquo;re using AI like a glorified Google.</h1>
+      <p class="lead">A few chats a day. The same background typed in again. Good ideas lost in old threads. I set you up with a small team of AI assistants that knows your work, drafts in your voice, and never sends a thing without your say-so.</p>
+      <div class="hero-actions">
+        <a href="https://calendly.com/james-harrop/30min" target="_blank" rel="noopener" class="btn btn-yellow" id="hero-cta">Book a free call</a>
+        <a href="#pricing" class="text-link">See the prices</a>
+      </div>
+      <p class="hero-note">Fifteen minutes is usually enough. I&rsquo;ll share my screen and show you my own set-up, then tell you whether it&rsquo;s worth doing for you.</p>
+    </div>
+
+    <div class="brief-holder">
+      <section class="brief" aria-label="An example morning brief you can try">
+        <div class="brief-head">
+          <h2>Your morning brief</h2>
+          <time>Tuesday, 7.30am</time>
+        </div>
+        <p class="brief-status" id="brief-status" aria-live="polite">Three drafts are waiting for you. Nothing has been sent.</p>
+
+        <div class="draft">
+          <h3>Reply to Sam about Thursday&rsquo;s quote</h3>
+          <p>&ldquo;Thanks for chasing, Sam. Quote attached. I&rsquo;ve held last month&rsquo;s price until Friday.&rdquo;</p>
+          <div class="draft-actions">
+            <button type="button" class="approve">Approve</button>
+            <button type="button" class="hold">Hold</button>
+            <span class="draft-state sent"><svg viewBox="0 0 30 26" aria-hidden="true"><path d="M3 14.5l7.5 8L27 3"/></svg>Sent, because you said so</span>
+            <span class="draft-state held">Held. It waits for you.</span>
+          </div>
+        </div>
+
+        <div class="draft">
+          <h3>Nudge on invoice 0142, three weeks late</h3>
+          <p>&ldquo;Hi Dana, a quick one on invoice 0142. Could you tell me when it&rsquo;s due to be paid?&rdquo;</p>
+          <div class="draft-actions">
+            <button type="button" class="approve">Approve</button>
+            <button type="button" class="hold">Hold</button>
+            <span class="draft-state sent"><svg viewBox="0 0 30 26" aria-hidden="true"><path d="M3 14.5l7.5 8L27 3"/></svg>Sent, because you said so</span>
+            <span class="draft-state held">Held. It waits for you.</span>
+          </div>
+        </div>
+
+        <div class="draft">
+          <h3>Proposal from yesterday&rsquo;s call</h3>
+          <p>First draft, in your template, from your call notes. Two prices for you to check.</p>
+          <div class="draft-actions">
+            <button type="button" class="approve">Approve</button>
+            <button type="button" class="hold">Hold</button>
+            <span class="draft-state sent"><svg viewBox="0 0 30 26" aria-hidden="true"><path d="M3 14.5l7.5 8L27 3"/></svg>Sent, because you said so</span>
+            <span class="draft-state held">Held. It waits for you.</span>
+          </div>
+        </div>
+      </section>
+      <p class="brief-caption">An example. Go on, press one. Nothing goes until you do.</p>
+    </div>
+  </header>
 </div>
 
 <main>
 
-  <!-- ===== HERO ===== -->
-  <header class="hero">
-    <div class="eyebrow">A one-man AI studio &middot; London</div>
-
-    <h1>You use AI every&nbsp;day. <span class="ds">Your business doesn&rsquo;t.</span></h1>
-
-    <p class="hero-sub">The average UK owner loses <strong>11 hours a week to admin</strong>. I build the workflows that hand them back &mdash; invoice chasing, lead follow-up, proposals, inbox triage &mdash; one at a time, live inside a week.</p>
-
-    <p class="hero-clarifier">Your First Workflow £750 &middot; Partner £350/mo &mdash; I keep it all working &middot; Embedded £1,500/mo. Everything on your accounts, yours to keep.</p>
-
-    <div class="hero-ctas">
-      <a href="https://calendly.com/james-harrop/30min" target="_blank" rel="noopener" class="btn btn-primary">Pick your workflow &nbsp;→</a>
-      <a href="#offer" class="btn btn-ghost">See pricing</a>
+  <section class="band">
+    <div class="wrap">
+      <h2>Sound familiar?</h2>
+      <ul class="familiar">
+        <li>Forty chats, and none of them knows about the others.</li>
+        <li>You explain who you are and what you do. Again.</li>
+        <li>You had a good idea on Tuesday. It&rsquo;s in a thread somewhere.</li>
+        <li>The tools can now read your inbox and reply from it. Which is exactly why you haven&rsquo;t switched them on.</li>
+        <li>It writes perfectly well. It just doesn&rsquo;t sound like you.</li>
+      </ul>
+      <p class="turn">The tools got good. The hard part now is the set-up.</p>
+      <p class="lead">Which ones, connected to what, allowed to do what, in whose voice. That&rsquo;s the part I do.</p>
     </div>
-    <div class="hero-micro">a short, free call &middot; 15 minutes is usually enough &middot; if it&rsquo;s not a fit, I&rsquo;ll say so</div>
+  </section>
 
-    <div class="horizon" aria-hidden="true">
-      <div class="sun"></div>
-    </div>
-  </header>
-
-  <!-- ===== TICKER ===== -->
-  <div class="ticker" aria-hidden="true">
-    <div class="ticker-track">
-      <div class="ticker-set">
-        <span>Invoices chased until the money lands</span><i>&#10042;</i>
-        <span>Leads followed up in minutes</span><i>&#10042;</i>
-        <span>Call transcript &rarr; priced proposal</span><i>&#10042;</i>
-        <span>Inbox triaged before 9am</span><i>&#10042;</i>
-        <span>Clients onboarded on autopilot</span><i>&#10042;</i>
-        <span>Reports that write themselves</span><i>&#10042;</i>
-        <span>CRM that keeps itself honest</span><i>&#10042;</i>
-        <span>Evenings back</span><i>&#10042;</i>
-      </div>
-      <div class="ticker-set">
-        <span>Invoices chased until the money lands</span><i>&#10042;</i>
-        <span>Leads followed up in minutes</span><i>&#10042;</i>
-        <span>Call transcript &rarr; priced proposal</span><i>&#10042;</i>
-        <span>Inbox triaged before 9am</span><i>&#10042;</i>
-        <span>Clients onboarded on autopilot</span><i>&#10042;</i>
-        <span>Reports that write themselves</span><i>&#10042;</i>
-        <span>CRM that keeps itself honest</span><i>&#10042;</i>
-        <span>Evenings back</span><i>&#10042;</i>
-      </div>
-    </div>
-  </div>
-
-  <!-- ===== PROOF ===== -->
-  <div class="proof">
-    <div class="proof-block">
-      <div class="proof-label">Built solo, live now</div>
-      <div class="proof-row">
-        <p><a href="https://adhouse.ai" target="_blank" rel="noopener">adhouse.ai</a> &mdash; an <strong>AI ad studio</strong>: brief in, finished Meta ads out. Next up: <strong>Unify</strong>, a consumer app, launching soon.</p>
-      </div>
-    </div>
-    <div class="proof-block">
-      <div class="proof-label"><span class="live-dot"></span>Client briefs, live and queued</div>
-      <div class="proof-row">
-        <p>An <strong>AI candidate-sourcing system</strong> for a London headhunter, and <strong>AI marketing ops</strong> for a six-person health-tech firm.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- ===== SOUND FAMILIAR ===== -->
-  <section class="reveal">
-    <div class="section-head">
-      <div class="section-tag">Sound familiar?</div>
-      <h2>Three things, <span class="ds">probably.</span></h2>
-    </div>
-
-    <div class="familiar-grid">
-      <div class="familiar-card">
-        <p>It&rsquo;s 9pm and you&rsquo;re still doing the invoices.</p>
-      </div>
-      <div class="familiar-card">
-        <p>The same information, retyped into two systems, forty minutes a day. Every day.</p>
-      </div>
-      <div class="familiar-card">
-        <p>ChatGPT writes your emails now. Somehow the week didn&rsquo;t get any shorter.</p>
+  <section class="band band-wash">
+    <div class="wrap split">
+      <h2>Anyone can sell you an AI tool. I&rsquo;ll make it work on a wet Tuesday.</h2>
+      <div class="prose">
+        <p>I run my own working week through a team of AI assistants. A chief of staff coordinates the rest: inbox, diary, research, money, home. They draft. I approve. Nothing goes out without me. I&rsquo;ll show you the whole thing live on our first call.</p>
+        <p>Before this I spent years making brands sound like themselves, at Saatchi &amp; Saatchi and Fallon, and then for businesses of my own. That matters more than you&rsquo;d think. Everyone now has the same tools. The difference is whether yours sounds like you, or like everyone else&rsquo;s robot.</p>
+        <p class="aside">Built by me and live now: <a href="https://adhouse.ai" target="_blank" rel="noopener">adhouse.ai</a>, an AI ad studio. Brief in, finished Meta ads out.</p>
       </div>
     </div>
   </section>
 
-  <!-- ===== WHY NOT A COURSE ===== -->
-  <section class="statement reveal">
-    <h2>You don&rsquo;t need a consultant.<br>You need <span class="ds">an AI guy.</span></h2>
-    <p>Eleven hours of the average owner&rsquo;s week goes on admin &mdash; and the businesses that wire AI in properly get about five of them back. A consultant will charge you five figures to tell you that. <strong>I charge &pound;750 to make it happen</strong> &mdash; one workflow, built properly, live inside a week. Not a strategy deck and an invoice.</p>
-  </section>
-
-  <!-- ===== HOW IT WORKS ===== -->
-  <section id="how" class="reveal">
-    <div class="section-head">
-      <div class="section-tag">How it works</div>
-      <h2>Pick. Build. <span class="ds">Hand over.</span></h2>
-    </div>
-
-    <div class="steps">
-      <div class="step">
-        <div class="day">Step 1 &middot; a short call, free</div>
-        <h4>Pick your workflow</h4>
-        <p>Tell me where the hours actually go &mdash; 15 minutes is usually enough. We pick the one workflow that gives most of them back.
-          <span class="light">If it&rsquo;s not a fit, I&rsquo;ll say so before we hang up &mdash; no follow-up email, no chase.</span></p>
-      </div>
-
-      <div class="step">
-        <div class="day">Step 2 &middot; live inside 7 days</div>
-        <h4>Built properly, offline</h4>
-        <p>I design and build it &mdash; the prompts, the integrations, the lot &mdash; and come back with it working, recorded so you can see exactly what it does.</p>
-      </div>
-
-      <div class="step">
-        <div class="day">Step 3 &middot; 60-90 minutes</div>
-        <h4>Handover, with a number</h4>
-        <p>We wire it into your business on a call, test it on your real work, and put a number on it: the hours it hands back each week.
-          <span class="light">On Partner or Embedded, this becomes a rhythm &mdash; new workflows, and everything kept working as models and APIs change.</span></p>
-      </div>
-    </div>
-
-    <div class="after-state">
-      <span class="tag">One week later</span>
-      <p>One workflow, live in your business, on your accounts, with an hours-back number attached. <span class="muted">And it does it all again tomorrow, without being asked.</span></p>
+  <section class="band" id="team">
+    <div class="wrap">
+      <h2>Start with one. Add the rest when you trust the first.</h2>
+      <ul class="team">
+        <li>
+          <h3>Chief of staff</h3>
+          <p>Holds your priorities, ideas and follow-ups in one place. A brief each morning, a round-up each evening, and one live action list instead of nine.</p>
+        </li>
+        <li>
+          <h3>Inbox assistant</h3>
+          <p>Sorts what needs you from what doesn&rsquo;t and drafts the replies in your voice. You press send.</p>
+        </li>
+        <li>
+          <h3>Follow-up chaser</h3>
+          <p>Spots the leads, quotes and invoices that have gone quiet and drafts the nudge. You approve it.</p>
+        </li>
+        <li>
+          <h3>Proposal writer</h3>
+          <p>Turns your call notes into a first-draft quote or proposal, in your format, while the call is still fresh.</p>
+        </li>
+        <li>
+          <h3>Onboarding coordinator</h3>
+          <p>Welcome email, forms and checklist for every new client, ready for you to check and send.</p>
+        </li>
+      </ul>
+      <p class="team-note">Every assistant comes with a job description, a voice guide and a set of rules. All written down. All yours.</p>
     </div>
   </section>
 
-  <!-- ===== WHAT WE COULD BUILD ===== -->
-  <section class="reveal">
-    <div class="section-head">
-      <div class="section-tag">What we could build</div>
-      <h2>Five workflows. <span class="ds">Pick the one that hurts.</span></h2>
-      <p class="section-lead">Pre-scoped, fixed price, live inside a week. Yours gets tuned to your business on the call &mdash; but it starts from one of these.</p>
-    </div>
-
-    <div class="build-list">
-      <div class="build-row">
-        <div class="num">No.1</div>
-        <h4>Invoice chasing</h4>
-        <p>Late payers chased politely, persistently, automatically &mdash; until the money lands. Owners lose around 86 hours a year to this one job.</p>
-      </div>
-      <div class="build-row">
-        <div class="num">No.2</div>
-        <h4>Lead follow-up</h4>
-        <p>Every enquiry answered in minutes and chased to a yes or a no &mdash; not left to die in the inbox while you&rsquo;re doing the work.</p>
-      </div>
-      <div class="build-row">
-        <div class="num">No.3</div>
-        <h4>Quotes &amp; proposals</h4>
-        <p>Record the call; get a priced proposal in your template, in your voice, the same day. The job you put off is the job you lose.</p>
-      </div>
-      <div class="build-row">
-        <div class="num">No.4</div>
-        <h4>Email triage</h4>
-        <p>Wake up to a sorted inbox and replies drafted in your voice, waiting for one-click send. Your Gmail, not another app.</p>
-      </div>
-      <div class="build-row">
-        <div class="num">No.5</div>
-        <h4>Client onboarding</h4>
-        <p>New client says yes &mdash; contracts, folders, first invoice and welcome email all happen on their own, the same hour.</p>
-      </div>
+  <section class="band band-blue on-blue" id="control">
+    <div class="wrap">
+      <h2>It asks before it acts.</h2>
+      <ul class="control-grid">
+        <li>
+          <h3>Draft-only by default</h3>
+          <p>Your assistants prepare. You press send. Nothing leaves without your approval.</p>
+        </li>
+        <li>
+          <h3>Your accounts, your data</h3>
+          <p>Everything lives on your logins. If we part ways, you keep the lot.</p>
+        </li>
+        <li>
+          <h3>Sensitive stuff stays out</h3>
+          <p>Before anything is connected, we decide what it must never see: client records, patient notes, anything covered by someone else&rsquo;s rules. If in doubt, it&rsquo;s out.</p>
+        </li>
+        <li>
+          <h3>Permissions set to &ldquo;always ask&rdquo;</h3>
+          <p>You widen them when you&rsquo;re ready, not before.</p>
+        </li>
+        <li>
+          <h3>A monthly access check</h3>
+          <p>On Care, I go through what each assistant can see and do, in plain English, so nothing creeps.</p>
+        </li>
+        <li>
+          <h3>An off switch you know how to use</h3>
+          <p>I show you how to disconnect everything yourself.</p>
+        </li>
+      </ul>
+      <p class="plain-truth">What I won&rsquo;t tell you is that AI is risk-free. It isn&rsquo;t, and anyone who says so is selling something. What I will do is make sure you can see what it&rsquo;s doing, and stop it.</p>
     </div>
   </section>
 
-  <!-- ===== PRICING ===== -->
-  <section id="offer" class="reveal">
-    <div class="section-head">
-      <div class="section-tag">Pricing</div>
-      <h2>Three tiers. Pick the <span class="ds">shape that fits.</span></h2>
-      <p class="section-lead">Most automations in this market get built, handed over, and quietly break within three months &mdash; because nobody owns them. The build gets you the hours back. Partner exists so you keep them.</p>
-    </div>
-
-    <div class="services">
-
-      <div class="service">
-        <div class="service-tag">Your First Workflow</div>
-        <h3>&pound;750 <span class="unit">one-off</span></h3>
-        <div class="fit">One workflow, built properly, live inside a week</div>
-        <ul class="service-list">
-          <li>Free pick-your-workflow call</li>
-          <li>Built offline, live inside 7 days</li>
-          <li>60-90 min handover call &mdash; wired into your accounts</li>
-          <li>Handover with an hours-back number, Looms included</li>
-          <li>If it breaks in the first 30 days, I fix it &mdash; free</li>
-        </ul>
-        <a href="https://calendly.com/james-harrop/30min" target="_blank" rel="noopener" class="service-cta">Pick your workflow &rarr;</a>
-      </div>
-
-      <div class="service featured">
-        <div class="service-tag">Partner &middot; Most popular</div>
-        <h3>&pound;350<span class="unit">/mo, after your first workflow</span></h3>
-        <div class="fit">I keep it all working &mdash; and growing</div>
-        <ul class="service-list">
-          <li>Your workflows monitored, and fixed when things change &mdash; models, APIs, your business</li>
-          <li>One new workflow every month, end to end</li>
-          <li>Private Slack (24-hr replies) + monthly check-in call</li>
-          <li>Cancel any month, no notice &mdash; and keep everything</li>
-        </ul>
-        <a href="https://calendly.com/james-harrop/30min" target="_blank" rel="noopener" class="service-cta">Pick your workflow &rarr;</a>
-      </div>
-
-      <div class="service">
-        <div class="service-tag">Embedded</div>
-        <h3>&pound;1,500<span class="unit">/mo</span></h3>
-        <div class="fit">Your AI function, without the hire</div>
-        <ul class="service-list">
-          <li>No build fee &mdash; we just get going</li>
-          <li>I run AI across the business &mdash; roadmap, builds, maintenance</li>
-          <li>Private Slack (same-day replies) + weekly check-in call</li>
-          <li>Cancel any month, no notice</li>
-        </ul>
-        <a href="https://calendly.com/james-harrop/30min" target="_blank" rel="noopener" class="service-cta">Book a brief call &rarr;</a>
-      </div>
-
-    </div>
-
-    <div class="guarantee">
-      <div class="guarantee-seal">&check;</div>
-      <p><strong>The call is always free.</strong><span class="light">If it&rsquo;s not a fit, I&rsquo;ll say so before we hang up. Six clients on retainer at a time.</span></p>
+  <section class="band" id="how">
+    <div class="wrap">
+      <h2>Three steps. One week.</h2>
+      <ol class="steps">
+        <li>
+          <h3>Pick</h3>
+          <p>A free call. You tell me where the week goes. I tell you which assistant to start with, or that you don&rsquo;t need me.</p>
+        </li>
+        <li>
+          <h3>Set up</h3>
+          <p>Inside seven days I build your team on your own accounts: what each assistant does, what it can see, and what it has to ask you first. You get a recorded walkthrough of everything.</p>
+        </li>
+        <li>
+          <h3>Hand over</h3>
+          <p>A 60 to 90 minute call, working on your real inbox and your real to-do list, not a demo. Two weeks later we tune whatever isn&rsquo;t earning its keep.</p>
+        </li>
+      </ol>
     </div>
   </section>
 
-  <!-- ===== FOUNDER ===== -->
-  <section class="reveal">
-    <div class="section-head">
-      <div class="section-tag">Who&rsquo;s behind it</div>
-      <h2>One <span class="ds">person,</span> actually.</h2>
-    </div>
+  <span id="offer"></span>
+  <section class="band band-wash" id="pricing">
+    <div class="wrap">
+      <h2>Fixed prices. No day rates, no decks.</h2>
+      <ul class="prices">
+        <li class="price">
+          <div>
+            <h3>The Sort-out</h3>
+            <p class="who">If you&rsquo;re curious but not sure where to start.</p>
+          </div>
+          <p class="what">Ninety minutes on a call. We look at how you use AI now, choose the right tools, and map your first three assistants. You get a written plan within 24 hours. Go ahead with a set-up inside 14 days and the &pound;195 comes off the price.</p>
+          <p class="cost">&pound;195</p>
+        </li>
+        <li class="price is-main">
+          <div>
+            <h3>Solo Set-up</h3>
+            <p class="who">For solo professionals and owner-operators. Where most people start.</p>
+          </div>
+          <div class="what">
+            <p>A chief of staff and up to two specialists, on your accounts. Your voice guide. Your rules. Your scattered notes and ideas pulled into one place. Handover on real work, a tune-up after two weeks, and free fixes for 30 days. Live inside a week.</p>
+            <p class="founding">Founding rate: the first five clients pay &pound;750.</p>
+          </div>
+          <p class="cost">&pound;950</p>
+        </li>
+        <li class="price">
+          <div>
+            <h3>Team Set-up</h3>
+            <p class="who">For owner-run firms of up to about 15 people.</p>
+          </div>
+          <p class="what">Set-up for up to five people, shared rules and a shared voice, assistants for the work you share, and a plain-English map of who and what can see what.</p>
+          <p class="cost">&pound;2,400 <small>and up, by size</small></p>
+        </li>
+        <li class="price">
+          <div>
+            <h3>Care</h3>
+            <p class="who">For after your set-up. Cancel any time.</p>
+          </div>
+          <p class="what">The tools change every few weeks. I keep yours current: a monthly access check, tune-ups, one new assistant or improvement a month, and a message away when you&rsquo;re stuck.</p>
+          <p class="cost">&pound;150 <small>a month solo, &pound;350 a month for teams</small></p>
+        </li>
+      </ul>
 
-    <div class="founder">
-      <div class="founder-avatar">J</div>
-      <div class="founder-note">
-        <div class="meta">Founder &middot; the only one</div>
-        <div class="founder-name">James Harrop</div>
-        <p>Saatchi-trained; owner-run businesses of my own ever since. <strong>Eddie Harrop</strong> &mdash; luxury accessories, sold via Net-A-Porter, five editions of <em>Vogue</em>. <strong>Minderful</strong> &mdash; workplace wellbeing, Apple App of the Day, &pound;1m raised, sold to PwC, Barclaycard and Dell. Lately, first employee at a venture-backed AI startup, where I closed its first enterprise contract. Twelve months ago I couldn&rsquo;t write a for-loop; this year I shipped seven products on Claude Code.</p>
-        <div class="founder-pull">I&rsquo;m not exceptional. I&rsquo;m just twelve months early.</div>
-        <div class="founder-chips">
-          <span class="chip">Saatchi &amp; Saatchi</span>
-          <span class="chip">Apple App of the Day</span>
-          <span class="chip">&pound;1m raised</span>
-        </div>
-        <div class="founder-links">
-          <a href="https://jamesharrop.co" target="_blank" rel="noopener">jamesharrop.co &nearr;</a>
-          <a href="mailto:jamesharrop@gmail.com">jamesharrop@gmail.com</a>
-        </div>
+      <div class="price-notes">
+        <p>You pay for the AI tools themselves direct. I take no commission from any of them, and I&rsquo;ll tell you the cost before you commit.</p>
+        <p>Need more than this? I work as an embedded AI lead for two firms at a time, from &pound;2,000 a month. Ask on the call.</p>
+      </div>
+
+      <div class="price-cta">
+        <a href="https://calendly.com/james-harrop/30min" target="_blank" rel="noopener" class="btn btn-blue">Book a free call</a>
+        <span>The call is free. If it&rsquo;s not a fit, I&rsquo;ll say so before we hang up.</span>
       </div>
     </div>
   </section>
 
-  <!-- ===== FAQ ===== -->
-  <section id="faq" class="reveal">
-    <div class="section-head">
-      <div class="section-tag">What you&rsquo;re probably thinking</div>
-      <h2>The <span class="ds">honest</span> answers.</h2>
-    </div>
-
-    <div class="faq-grid">
-      <div class="faq-item">
-        <h4>Why these prices?</h4>
-        <p>&pound;750 is the accessible end of what UK studios charge for a single build &mdash; the going band runs to &pound;2,500 and beyond. &pound;350/mo exists because most automations in this market break within three months of handover; on Partner, keeping yours alive is my job, not your problem. &pound;1,500/mo is well under a day-a-week consultant, let alone a hire.</p>
-      </div>
-      <div class="faq-item">
-        <h4>Which workflow should I pick?</h4>
-        <p>That&rsquo;s the call. Bring where your evenings actually go &mdash; I&rsquo;ll bring the menu. We pick the one workflow that hands back the most hours first; the rest can wait their turn. Fifteen minutes is usually enough.</p>
-      </div>
-      <div class="faq-item">
-        <h4>What if I&rsquo;m completely non-technical?</h4>
-        <p>Same as me twelve months ago. Claude Code writes the code in plain English; I do the design. You just bring the business knowledge &mdash; what you sell, who you sell to, what slows you down.</p>
-      </div>
-      <div class="faq-item">
-        <h4>We&rsquo;re a small team, not a solopreneur. Still for us?</h4>
-        <p>Yes. The fit is owner-run, not headcount &mdash; if the person on the brief call owns the P&amp;L, it works. Just you, or you and six staff. Embedded exists for exactly this.</p>
-      </div>
-      <div class="faq-item">
-        <h4>Who owns the tools?</h4>
-        <p>You do. Everything runs on your accounts and ships with Loom recordings and handover notes. Cancel any month and keep the lot.</p>
-      </div>
-      <div class="faq-item">
-        <h4>Can&rsquo;t I just build this myself with ChatGPT?</h4>
-        <p>Maybe &mdash; the tools aren&rsquo;t the moat, the evenings are. Most owners get 80% of the way there on a Saturday and the tool is dead by Monday. You&rsquo;re paying for the design, the wiring into your real accounts, and someone accountable when it breaks. And if you&rsquo;d genuinely be better off building it yourself, I&rsquo;ll tell you that on the call.</p>
+  <section class="band">
+    <div class="wrap split">
+      <h2>Hello, I&rsquo;m James.</h2>
+      <div class="prose">
+        <p>I trained as an art director at Watford and worked at Saatchi &amp; Saatchi and Fallon. Then I started things: Eddie Harrop, a luxury accessories brand sold through Net-A-Porter and featured in five editions of Vogue, and Minderful, a workplace wellbeing app that was Apple&rsquo;s App of the Day, raised &pound;1m, and counted PwC, Barclaycard and Dell among its customers. Most recently I was the first employee at a venture-backed AI start-up.</p>
+        <p>A year or so ago I couldn&rsquo;t write a for-loop. Since then I&rsquo;ve built and shipped my own products with AI, and I now run my working week through a team of AI assistants.</p>
+        <p>I&rsquo;m not a computer scientist. I&rsquo;m a brand person who got obsessed. That turns out to be useful: I can make this stuff work, and I can make it sound like you.</p>
+        <p>Based in London, working across the UK by video. There&rsquo;s one of me, so I take on a handful of set-ups a month.</p>
+        <p class="signoff">
+          <a href="https://jamesharrop.co" target="_blank" rel="noopener" class="text-link">jamesharrop.co</a>
+          <a href="mailto:jamesharrop@gmail.com" class="text-link">jamesharrop@gmail.com</a>
+        </p>
       </div>
     </div>
   </section>
 
-  <!-- ===== CTA ===== -->
-  <section id="book" class="cta reveal">
-    <div class="cta-glow" aria-hidden="true"></div>
-    <h2>Pick your workflow. <span class="ds">Get your evenings back.</span></h2>
-    <p class="cta-note">Free call to pick it &middot; &pound;750 to build it &middot; live inside a week. Everything on your accounts, yours to keep.</p>
-    <div class="cta-row">
-      <a href="https://calendly.com/james-harrop/30min" target="_blank" rel="noopener" class="btn btn-primary">Pick your workflow &nbsp;→</a>
-      <a href="mailto:jamesharrop@gmail.com?subject=Unbehind%20workflow&body=Hi%20James%2C%0A%0AWhat%20I%20do%3A%0A%0AWhere%20the%20hours%20go%3A%0A%0A" class="btn btn-ghost">Prefer email?</a>
+  <span id="faq"></span>
+  <section class="band band-wash" id="questions">
+    <div class="wrap">
+      <h2>What you&rsquo;re probably thinking.</h2>
+      <div class="questions">
+        <details>
+          <summary>Can&rsquo;t I just set this up myself?</summary>
+          <p>Yes, if you&rsquo;ve got a spare weekend and you like tinkering. The tools are built for it. You&rsquo;re paying me for the weekend, plus the parts that are easy to get wrong: what it&rsquo;s allowed to see, what it&rsquo;s allowed to send, and whether it sounds like you. If you&rsquo;d be better off doing it yourself, I&rsquo;ll tell you that on the call.</p>
+        </details>
+        <details>
+          <summary>What can it see?</summary>
+          <p>Only what we connect, and we decide that together before anything is switched on. You get the list in writing.</p>
+        </details>
+        <details>
+          <summary>I handle confidential information. Is this for me?</summary>
+          <p>Often yes, with a firm line drawn first. Client records, patient data and anything covered by professional or regulatory rules stay out. I&rsquo;m not a lawyer or a data protection officer, so if you answer to a regulator or an employer, check the set-up with them. I&rsquo;ll give you a plain summary to show them.</p>
+        </details>
+        <details>
+          <summary>I&rsquo;m not technical.</summary>
+          <p>Good. Neither are most of the people this is for. If you can write an email, you can run this.</p>
+        </details>
+        <details>
+          <summary>Which tools do you use?</summary>
+          <p>Whichever fit how you work. I&rsquo;m not tied to any of them and I take no commission. You pay the subscription direct, and I&rsquo;ll tell you the cost before you commit.</p>
+        </details>
+        <details>
+          <summary>What happens when the tools change?</summary>
+          <p>They will, probably next month. That&rsquo;s what Care is for. If you&rsquo;d rather look after it yourself, your handover notes show you how.</p>
+        </details>
+        <details>
+          <summary>Who owns it all?</summary>
+          <p>You do. Your accounts, your assistants, your voice guide, your rules.</p>
+        </details>
+        <details>
+          <summary>Do you work with teams?</summary>
+          <p>Yes, up to about 15 people. Beyond that I&rsquo;m probably not your person, and I&rsquo;ll say so.</p>
+        </details>
+        <details>
+          <summary>Why these prices?</summary>
+          <p>A consultant charges more to tell you what to do. I&rsquo;d rather charge less and do it.</p>
+        </details>
+        <details>
+          <summary>Do you do marketing as well?</summary>
+          <p>Yes, separately. For ads, launches and brand work, see <a href="https://adhouse.ai" target="_blank" rel="noopener">adhouse.ai</a>.</p>
+        </details>
+      </div>
     </div>
-    <div class="capacity">Six retainer clients at a time. Two Embedded seats.</div>
+  </section>
+
+  <section class="band band-yellow on-yellow closing" id="book">
+    <div class="wrap">
+      <h2>See it working before you spend a penny.</h2>
+      <p class="lead">A free call. I&rsquo;ll share my screen, show you my own AI team at work, and tell you straight whether it&rsquo;s worth doing for you. Fifteen minutes is usually enough.</p>
+      <div class="closing-actions">
+        <a href="https://calendly.com/james-harrop/30min" target="_blank" rel="noopener" class="btn btn-ink" id="closing-cta">Book a free call</a>
+        <a href="mailto:jamesharrop@gmail.com?subject=Unbehind%20set-up&body=Hi%20James%2C%0A%0AWhat%20I%20do%3A%0A%0AWhere%20my%20week%20goes%3A%0A%0A" class="text-link">Or send me an email</a>
+      </div>
+    </div>
   </section>
 
 </main>
 
-<footer>
-  <div>© 2026 Unbehind · London</div>
+<footer class="wrap">
+  <div>&copy; 2026 Unbehind, London</div>
   <div><a href="mailto:jamesharrop@gmail.com">jamesharrop@gmail.com</a></div>
 </footer>
 
+<div class="callbar" id="callbar">
+  <span>Free call. See my set-up live.</span>
+  <a href="https://calendly.com/james-harrop/30min" target="_blank" rel="noopener" class="btn btn-yellow">Book a free call</a>
+</div>
+
 <script defer src="/_vercel/insights/script.js"></script>
 <script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add('visible');
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+  // The morning brief: nothing is "sent" until the visitor approves it.
+  (function () {
+    var drafts = document.querySelectorAll('.draft');
+    var status = document.getElementById('brief-status');
+    var words = ['None', 'One', 'Two', 'Three'];
 
-  document.querySelectorAll('.reveal').forEach(s => observer.observe(s));
+    function update() {
+      var sent = document.querySelectorAll('.draft.is-sent').length;
+      var held = document.querySelectorAll('.draft.is-held').length;
+      var waiting = drafts.length - sent - held;
+      var text;
+      if (sent === 0 && held === 0) {
+        text = 'Three drafts are waiting for you. Nothing has been sent.';
+      } else if (sent === drafts.length) {
+        text = 'All three sent, and only because you said so.';
+      } else if (waiting === 0) {
+        text = words[sent] + ' sent, ' + words[held].toLowerCase() + ' held. Nothing moved without you.';
+      } else {
+        var parts = [];
+        if (sent) parts.push(words[sent] + ' sent.');
+        if (held) parts.push(words[held] + ' held.');
+        parts.push(words[waiting] + ' still waiting for you.');
+        text = parts.join(' ');
+      }
+      status.textContent = text;
+    }
+
+    drafts.forEach(function (draft) {
+      draft.querySelector('.approve').addEventListener('click', function () {
+        draft.classList.remove('is-held');
+        draft.classList.add('is-sent');
+        update();
+      });
+      draft.querySelector('.hold').addEventListener('click', function () {
+        draft.classList.add('is-held');
+        update();
+      });
+    });
+  })();
+
+  // Phone call bar: appears once the hero button has scrolled away,
+  // and steps aside when the closing button is on screen.
+  (function () {
+    var bar = document.getElementById('callbar');
+    var hero = document.getElementById('hero-cta');
+    var closing = document.getElementById('closing-cta');
+    if (!bar || !('IntersectionObserver' in window)) return;
+    var heroSeen = true, closingSeen = false;
+    function sync() { bar.classList.toggle('is-up', !heroSeen && !closingSeen); }
+    new IntersectionObserver(function (e) { heroSeen = e[0].isIntersecting; sync(); }).observe(hero);
+    new IntersectionObserver(function (e) { closingSeen = e[0].isIntersecting; sync(); }).observe(closing);
+  })();
 </script>
 
 </body>

@@ -3,6 +3,7 @@
 //
 // Usage: node scripts/generate-og.mjs
 // Requires: npm install --no-save playwright
+// Set CHROME_PATH to use an installed Chrome instead of Playwright's own browser.
 
 import { chromium } from 'playwright';
 import { fileURLToPath } from 'url';
@@ -11,7 +12,9 @@ import path from 'path';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.join(__dirname, '..');
 
-const browser = await chromium.launch();
+const browser = await chromium.launch(
+  process.env.CHROME_PATH ? { executablePath: process.env.CHROME_PATH } : {}
+);
 
 // OG image — exact 1200x630 spec
 {
